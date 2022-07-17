@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "5GFCNrTIPftcWpehUXUlDQuhpN3jRqn+Y671xZWOtXk=",
+  "Source": "LEX_RequestProcessService",
+  "BasePath": "_content/LEX_RequestProcessService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

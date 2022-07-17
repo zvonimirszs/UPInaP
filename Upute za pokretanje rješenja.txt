@@ -1,0 +1,49 @@
+Pokretanje programskog rješenja iz razvojnog alata (Visual Studio Code)
+ - svi projekti u Development okruženju koriste InMemory DB
+    - zbog toga nije potrebno imati pokrenuti kontejner sa MS SQL Server Express
+ - RabbitMQ je pokrenut u kontejneru
+    - bez pokretanja RabbitMQ kontejenra određene funkcionalnosti (primanje i lsanje asinkronih poruka) programskog rješenja neće raditi
+ - da bi testiralo sve funkcionalnosti, svih servisa potrebno je pokrenuti sve servise određenim redosljedom
+    - Identifikacijski servis
+    - Servis za postavke
+    - Servis za zahtjeve za pretplatom
+    - Servis za evidneciju zahtjeva
+    - Servis za zahtjeve
+ - pokretanje servisa pojedinačno
+    - otvoriti termin
+    - upisati dotnet run
+ - tesiranje svakog servisa  pojedinačno - localhost 
+  - koristiti Postman (besplatan)
+  - .. (napisati upite prema API-ima)
+
+Kreiranje Docker slike
+ - "docker build -t [naziv korisničkog računa na Docker Hub]/[naziv servisa, npr. lex-identity] ."
+ Guranje docker slike na Docker Hub
+  - izrada računa na Docker Hub (besplatno)
+    - "docker push [naziv korisničkog računa na Docker Hub]/[naziv servisa koji se kreirao, npr. lex-identity]" 
+
+Pokretanje programskog rješenja za izvođenje iz kontejnera
+ - instalacija Docker desktopa ili nekog drugog alata (besplatno)
+ - potrebno je izvršiti sve yaml datoteke iz mapi K8S
+    - primjer izvršne linije "kubectl apply -f [naziv yaml datoteke, npr. lex-identity-depl.yaml]"
+    - da bi testiralo sve funkcionalnosti, svih servisa potrebno je pokrenuti sve servise određenim redosljedom
+        - ... (nazive datoteka redsolojedom i opisom)
+ - svi projekti u Production okruženju koriste MS SQL DB
+    - zbog toga JE potrebno imati pokrenuti kontejner sa MS SQL Server Express (yaml datoteka je u mapi K8S)
+ - RabbitMQ je pokrenut u kontejneru
+    - bez pokretanja RabbitMQ kontejenra određene funkcionalnosti (primanje i lsanje asinkronih poruka) programskog rješenja neće raditi
+    - yaml datoteka je u mapi K8S
+ - tesiranje programskog rješenja
+  - koristiti Postman (besplatan) - preko mapirane domene ...
+  - .. (napisati upite prema API-ima)
+
+SKRIVENI KLJUČ U KIBERNETES
+ - kreirati skriveni ključ
+    - izvršiti komandnu liniju kubectl create secret generic mssql --from-literal=SA_PASSWORD="pa55w0rd!"
+        - msslq je name a SA_PASSWORD je key lozinke - to ćemo koristiti u deployment yaml dokumentu za MSSQL sever 
+EDITIRANJE  HOST dokumenta
+- postavljanje acme.com u naše posatvke - localhost file update
+- putanja je C:\Windows\System32\drivers\etc
+- dokument host
+- otvoriti kao administrator
+   - dodati liniju 127.0.0.1 diplomski2022ouzp.com (to će preusmjeriti sve pozive na 127.0.0.1)

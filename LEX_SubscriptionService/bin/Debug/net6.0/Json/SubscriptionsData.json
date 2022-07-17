@@ -1,0 +1,88 @@
+[
+    {
+        "Name": "Glasnik",
+        "Purpose": "Slanje mailova na tjednoj razini u kojem se nalazi pravni sadržaj (...)",
+        "Key": "GlasnikIUS-INFO",
+        "Description": "Tjedne obavijesti na e-mail",
+        "ServiceId": 1,
+        "Category": "osobni podaci",
+        "LawfulnessofProcessing": "Privola, legitiman interes",
+        "LegitimateInterestsDesc": "",
+        "Recipients": "odvjetnici, pravnicu u gospodsrstvu, pravne službe javnih servisa",
+        "Sources": "javni izvori, IUS-INFO portal (registracijski obrazac), NAV",
+        "TransferThirdCountry": false,
+        "StartDate": null,
+        "EndDate": null
+    },
+    {
+        "Name": "Oglasavanje",
+        "Purpose": "Slanje mailova na tjednoj razini u kojem se nalazi pravni sadržaj i događaji pravne tematike (...)",
+        "Key": "OglasavanjeIUSINFO",
+        "Description": "Tjedne obavijesti na e-mail",
+        "ServiceId": 1,
+        "Category": "osobni podaci",
+        "LawfulnessofProcessing": "Privola, legitiman interes",
+        "LegitimateInterestsDesc": "",
+        "Recipients": "odvjetnici, pravnicu u gospodsrstvu, pravne službe javnih servisa",
+        "Sources": "javni izvori, IUS-INFO portal (registracijski obrazac)",
+        "TransferThirdCountry": false,
+        "StartDate": null
+    },
+    {
+        "Name": "Glasnik",
+        "Purpose": "Slanje mailova na mjesečnoj razini u kojem se nalazi poslovni sadržaj (...)",
+        "Key": "GlasnikINSOLVE",
+        "Description": "Mjesečne obavijesti na e-mail",
+        "ServiceId": 2,
+        "Category": "osobni podaci",
+        "LawfulnessofProcessing": "Privola, legitiman interes",
+        "LegitimateInterestsDesc": "",
+        "Recipients": "pravni subjekti, obrtni subjekti, financijske ustanove",
+        "Sources": "javni izvori, INSOLVE portal (registracijski obrazac), NAV",
+        "TransferThirdCountry": false,
+        "StartDate": null
+    },
+    {
+        "Name": "Novosti",
+        "Purpose": "Svrha obrade ???",
+        "Key": "NovostiDogadaji",
+        "Description": "Obavijesti o novim događajima LEXPERA na e-mail ili drugim događajima pravno-poslovnog sadržaja",
+        "ServiceId": 3,
+        "Category": "osobni podaci",
+        "LawfulnessofProcessing": "Privola, legitiman interes",
+        "LegitimateInterestsDesc": "",
+        "Recipients": "pravni subjekti, obrtni subjekti, financijske ustanove, odvjetnici...",
+        "Sources": "javni izvori, IUS-INFO portal (registracijski obrazac), internet stranica Događaji Lexpera(obrazac)",
+        "TransferThirdCountry": false,
+        "StartDate": null
+    },
+    {
+        "Name": "Novosti-postom",
+        "Purpose": "Svrha obrade ???",
+        "Key": "NovostiPostomDogadaji",
+        "Description": "Obavijesti o novim događajima slanje poštom na adresu",
+        "ServiceId": 3,
+        "Category": "osobni podaci",
+        "LawfulnessofProcessing": "Privola, legitiman interes",
+        "LegitimateInterestsDesc": "",
+        "Recipients": "pravni subjekti, obrtni subjekti, financijske ustanove, odvjetnici...",
+        "Sources": "javni izvori, NAV",
+        "TransferThirdCountry": false,
+        "StartDate": null
+    },
+    {
+        "Name": "Glasnik",
+        "Purpose": "Svrha obrade ???",
+        "Key": "GlasnikEDUS",
+        "Description": "Mjesečne obavijesti na e-mail",
+        "ServiceId": 5,
+        "Category": "osobni podaci",
+        "LawfulnessofProcessing": "Privola, legitiman interes",
+        "LegitimateInterestsDesc": "",
+        "Recipients": "Edukacijske ustanove u Hrvatskoj",
+        "Sources": "javni izvori, EDUs portal",
+        "TransferThirdCountry": false,
+        "StartDate": null
+    }
+]
+

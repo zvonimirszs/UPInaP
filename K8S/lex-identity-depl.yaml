@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lex-identity-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lex-identityservice
+  template:
+    metadata:
+      labels:
+        app: lex-identityservice
+    spec:
+      containers:
+        - name: lex-identityservice
+          image: zvonimirs1975/lex-identityservice:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lex-identity-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: lex-identityservice
+  ports:
+  - name: lex-identityservice
+    protocol: TCP
+    port: 80
+    targetPort: 80
+  - name: lex-identitygrpc
+    protocol: TCP
+    port: 666
+    targetPort: 666
