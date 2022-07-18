@@ -7,20 +7,20 @@
 	},
 	"item": [
 		{
-			"name": "Identity Service Docker",
+			"name": "Identifikacijski servis",
 			"item": [
 				{
-					"name": "Get",
+					"name": "Get - testiranje dohvaćanja Get metode",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5008/api/identifikacija/testGet",
-							"protocol": "http",
+							"raw": "https://diplomski2022ouzp.com/api/identifikacija/testGet",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"diplomski2022ouzp",
+								"com"
 							],
-							"port": "5008",
 							"path": [
 								"api",
 								"identifikacija",
@@ -36,12 +36,11 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5008/api/identifikacija/testPost",
-							"protocol": "http",
+							"raw": "https://diplomski2022ouzp/api/identifikacija/testPost",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"diplomski2022ouzp"
 							],
-							"port": "5008",
 							"path": [
 								"api",
 								"identifikacija",
@@ -52,7 +51,7 @@
 					"response": []
 				},
 				{
-					"name": "Authenticate",
+					"name": "Authenticate - testiranje metode",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -66,12 +65,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5008/api/identifikacija/autorizacija",
-							"protocol": "http",
+							"raw": "https://diplomski2022ouzp.com/api/identifikacija/autorizacija",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"diplomski2022ouzp",
+								"com"
 							],
-							"port": "5008",
 							"path": [
 								"api",
 								"identifikacija",
@@ -82,14 +81,14 @@
 					"response": []
 				},
 				{
-					"name": "ValidateToken",
+					"name": "ValidateToken - testiranje metode",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc0OTI1NDAsImV4cCI6MTY1NzQ5MzQ0MCwiaWF0IjoxNjU3NDkyNTQwfQ.kncOTljdz5JQpW4AQBQ41xANugsPDGjh0HYv3XsDEcg",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNDkyMjMsImV4cCI6MTY1ODE1MDEyMywiaWF0IjoxNjU4MTQ5MjIzfQ.9-siEo3XI5r-Dmeo1kcjxV9WdK_-qY80y4-fwiQ5Ar",
 									"type": "string"
 								}
 							]
@@ -106,10 +105,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://acme.com/api/identifikacija/autorizacija",
-							"protocol": "http",
+							"raw": "https://diplomski2022ouzp.com/api/identifikacija/autorizacija",
+							"protocol": "https",
 							"host": [
-								"acme",
+								"diplomski2022ouzp",
 								"com"
 							],
 							"path": [
@@ -124,10 +123,10 @@
 			]
 		},
 		{
-			"name": "Legal Service Docker",
+			"name": "Servis za postavke",
 			"item": [
 				{
-					"name": "Authenticate",
+					"name": "Authenticate - testiranje metode",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -141,15 +140,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5008/api/identifikacija/autorizacija",
-							"protocol": "http",
+							"raw": "https://diplomski2022ouzp.com/api/postavke/autorizacija",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"diplomski2022ouzp",
+								"com"
 							],
-							"port": "5008",
 							"path": [
 								"api",
-								"identifikacija",
+								"postavke",
 								"autorizacija"
 							]
 						}
@@ -159,17 +158,17 @@
 			]
 		},
 		{
-			"name": "Subscription Service Docker",
+			"name": "Servis za zahtjeve za pretplatom",
 			"item": [
 				{
-					"name": "GetSubscriptions",
+					"name": "Dohvati pretplate",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc1Mzc0OTksImV4cCI6MTY1NzUzODM5OSwiaWF0IjoxNjU3NTM3NDk5fQ._Cme2EkUplUMB0f10dvxoCP-YNG9lOz5Rxqw6-GJskk",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNDkzOTcsImV4cCI6MTY1ODE1MDI5NywiaWF0IjoxNjU4MTQ5Mzk3fQ.hOWz6ngy6FD0WGjmkEPA1Upr_R12I6Yefux5nAK-AEE",
 									"type": "string"
 								}
 							]
@@ -183,10 +182,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://acme.com/api/pretplata",
-							"protocol": "http",
+							"raw": "https://diplomski2022ouzp.com/api/pretplata",
+							"protocol": "https",
 							"host": [
-								"acme",
+								"diplomski2022ouzp",
 								"com"
 							],
 							"path": [
@@ -198,14 +197,14 @@
 					"response": []
 				},
 				{
-					"name": "GetEntitysForSubscription",
+					"name": "Dohvati zahtjeve po pretplati",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc1Mzc0OTksImV4cCI6MTY1NzUzODM5OSwiaWF0IjoxNjU3NTM3NDk5fQ._Cme2EkUplUMB0f10dvxoCP-YNG9lOz5Rxqw6-GJskk",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNDkzOTcsImV4cCI6MTY1ODE1MDI5NywiaWF0IjoxNjU4MTQ5Mzk3fQ.hOWz6ngy6FD0WGjmkEPA1Upr_R12I6Yefux5nAK-AEE",
 									"type": "string"
 								}
 							]
@@ -219,10 +218,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://acme.com/api/pretplata/zahtjevi/1",
-							"protocol": "http",
+							"raw": "https://diplomski2022ouzp.com/api/pretplata/zahtjevi/1",
+							"protocol": "https",
 							"host": [
-								"acme",
+								"diplomski2022ouzp",
 								"com"
 							],
 							"path": [
@@ -236,25 +235,31 @@
 					"response": []
 				},
 				{
-					"name": "GetEntityForSubscription",
+					"name": "Dohvati zahtjev po broju i pretplati",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTczOTg0ODYsImV4cCI6MTY1NzM5OTM4NiwiaWF0IjoxNjU3Mzk4NDg2fQ.bolk2nNUOmW9ODSlccUdicC_2gW9mBiLUV3rwEfXeVE",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNDkzOTcsImV4cCI6MTY1ODE1MDI5NywiaWF0IjoxNjU4MTQ5Mzk3fQ.hOWz6ngy6FD0WGjmkEPA1Upr_R12I6Yefux5nAK-AEE",
 									"type": "string"
 								}
 							]
 						},
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSPortalRegistracija",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://acme.com/api/pretplata/zahtjev/1/2",
-							"protocol": "http",
+							"raw": "https://diplomski2022ouzp.com/api/pretplata/zahtjev/1/1",
+							"protocol": "https",
 							"host": [
-								"acme",
+								"diplomski2022ouzp",
 								"com"
 							],
 							"path": [
@@ -262,15 +267,25 @@
 								"pretplata",
 								"zahtjev",
 								"1",
-								"2"
+								"1"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "CreateEntityForSubscription",
+					"name": "Kreiraj zahtjev po pretplati",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNTA5NzcsImV4cCI6MTY1ODE1MTg3NywiaWF0IjoxNjU4MTUwOTc3fQ.tkcqT5yFdKjCcpiVnTSw7hOKsjoblcvKWGTciMiJbeM",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -289,16 +304,16 @@
 							}
 						},
 						"url": {
-							"raw": "http://acme.com/api/subscription/CreateEntityForSubscription/2",
-							"protocol": "http",
+							"raw": "https://diplomski2022ouzp.com/api/pretplata/zahtjev/2",
+							"protocol": "https",
 							"host": [
-								"acme",
+								"diplomski2022ouzp",
 								"com"
 							],
 							"path": [
 								"api",
-								"subscription",
-								"CreateEntityForSubscription",
+								"pretplata",
+								"zahtjev",
 								"2"
 							]
 						}
@@ -320,30 +335,30 @@
 							}
 						},
 						"url": {
-							"raw": "http://acme.com/api/pretplata/Authenticate",
-							"protocol": "http",
+							"raw": "https://diplomski2022ouzp.com/api/pretplata/autorizacija",
+							"protocol": "https",
 							"host": [
-								"acme",
+								"diplomski2022ouzp",
 								"com"
 							],
 							"path": [
 								"api",
 								"pretplata",
-								"Authenticate"
+								"autorizacija"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "GetSources",
+					"name": "Dohvati izvore preko drugog servisa",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc2MTQ4NTcsImV4cCI6MTY1NzYxNTc1NywiaWF0IjoxNjU3NjE0ODU3fQ.dB_jjKc6o7vvKWIixHpw6xtYJX8mZWgaMcxp1eYwzmk",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNDMxNzgsImV4cCI6MTY1ODE0NDA3OCwiaWF0IjoxNjU4MTQzMTc4fQ.TzcMM_KE-aHgXna9UvO9DirN0aXiXuVJz_R_6E9NKas",
 									"type": "string"
 								}
 							]
@@ -366,12 +381,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5289/api/pretplata/izvori",
-							"protocol": "http",
+							"raw": "https://diplomski2022ouzp.com/api/pretplata/izvori",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"diplomski2022ouzp",
+								"com"
 							],
-							"port": "5289",
 							"path": [
 								"api",
 								"pretplata",
@@ -384,18 +399,18 @@
 			]
 		},
 		{
-			"name": "RequestRecords Service Docker",
+			"name": "Servis za evidenciju zahtjeva",
 			"item": [
 				{
-					"name": "GetRequestTypes",
+					"name": "Dohvati tipove zahtjeva",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://acme.com/api/pravaispitanika/tipovi",
-							"protocol": "http",
+							"raw": "https://diplomski2022ouzp.com/api/pravaispitanika/tipovi",
+							"protocol": "https",
 							"host": [
-								"acme",
+								"diplomski2022ouzp",
 								"com"
 							],
 							"path": [
@@ -408,14 +423,14 @@
 					"response": []
 				},
 				{
-					"name": "GetRequests",
+					"name": "Dohvati sve upite",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc0Mzk0NzksImV4cCI6MTY1NzQ0MDM3OSwiaWF0IjoxNjU3NDM5NDc5fQ.Hf3YED59JWja_QZAtEqU4V-H4133WxwZp-dr3Rw_0Ns",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNDkzOTcsImV4cCI6MTY1ODE1MDI5NywiaWF0IjoxNjU4MTQ5Mzk3fQ.hOWz6ngy6FD0WGjmkEPA1Upr_R12I6Yefux5nAK-AEE",
 									"type": "string"
 								}
 							]
@@ -423,10 +438,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://acme.com/api/pravaispitanika/zahtjevi",
-							"protocol": "http",
+							"raw": "https://diplomski2022ouzp.com/api/pravaispitanika/zahtjevi",
+							"protocol": "https",
 							"host": [
-								"acme",
+								"diplomski2022ouzp",
 								"com"
 							],
 							"path": [
@@ -439,14 +454,14 @@
 					"response": []
 				},
 				{
-					"name": "GetRequestsByRequestType",
+					"name": "Dohvati upite prema tipu",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc0Mzk0NzksImV4cCI6MTY1NzQ0MDM3OSwiaWF0IjoxNjU3NDM5NDc5fQ.Hf3YED59JWja_QZAtEqU4V-H4133WxwZp-dr3Rw_0Ns",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNDkzOTcsImV4cCI6MTY1ODE1MDI5NywiaWF0IjoxNjU4MTQ5Mzk3fQ.hOWz6ngy6FD0WGjmkEPA1Upr_R12I6Yefux5nAK-AEE",
 									"type": "string"
 								}
 							]
@@ -454,10 +469,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://acme.com/api/pravaispitanika/zahtjevi/1",
-							"protocol": "http",
+							"raw": "https://diplomski2022ouzp.com/api/pravaispitanika/zahtjevi/1",
+							"protocol": "https",
 							"host": [
-								"acme",
+								"diplomski2022ouzp",
 								"com"
 							],
 							"path": [
@@ -471,14 +486,14 @@
 					"response": []
 				},
 				{
-					"name": "GetRequestByRequestId",
+					"name": "Dohvati upit prema broju upita",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc0Mzk0NzksImV4cCI6MTY1NzQ0MDM3OSwiaWF0IjoxNjU3NDM5NDc5fQ.Hf3YED59JWja_QZAtEqU4V-H4133WxwZp-dr3Rw_0Ns",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNDkzOTcsImV4cCI6MTY1ODE1MDI5NywiaWF0IjoxNjU4MTQ5Mzk3fQ.hOWz6ngy6FD0WGjmkEPA1Upr_R12I6Yefux5nAK-AEE",
 									"type": "string"
 								}
 							]
@@ -486,10 +501,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://acme.com/api/pravaispitanika/zahtjev/1",
-							"protocol": "http",
+							"raw": "https://diplomski2022ouzp.com/api/pravaispitanika/zahtjev/1",
+							"protocol": "https",
 							"host": [
-								"acme",
+								"diplomski2022ouzp",
 								"com"
 							],
 							"path": [
@@ -503,14 +518,14 @@
 					"response": []
 				},
 				{
-					"name": "CreateRequestRecordForType",
+					"name": "Kreiraj upit prema tipu zahtjeva",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc0Mzk0NzksImV4cCI6MTY1NzQ0MDM3OSwiaWF0IjoxNjU3NDM5NDc5fQ.Hf3YED59JWja_QZAtEqU4V-H4133WxwZp-dr3Rw_0Ns",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNTA5NzcsImV4cCI6MTY1ODE1MTg3NywiaWF0IjoxNjU4MTUwOTc3fQ.tkcqT5yFdKjCcpiVnTSw7hOKsjoblcvKWGTciMiJbeM",
 									"type": "string"
 								}
 							]
@@ -533,12 +548,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/pravaispitanika/zahtjev/4",
-							"protocol": "http",
+							"raw": "https://diplomski2022ouzp.com/api/pravaispitanika/zahtjev/4",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"diplomski2022ouzp",
+								"com"
 							],
-							"port": "5000",
 							"path": [
 								"api",
 								"pravaispitanika",
@@ -564,10 +579,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://acme.com/api/pravaispitanika/autorizacija",
-							"protocol": "http",
+							"raw": "https://diplomski2022ouzp.com/api/pravaispitanika/autorizacija",
+							"protocol": "https",
 							"host": [
-								"acme",
+								"diplomski2022ouzp",
 								"com"
 							],
 							"path": [
@@ -582,28 +597,34 @@
 			]
 		},
 		{
-			"name": "Request Process Service Docker",
+			"name": "Servis za prava ispitanika",
 			"item": [
 				{
-					"name": "GetRequestProcess",
+					"name": "Dohvati upite na pristup",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc1NDY1MTIsImV4cCI6MTY1NzU0NzQxMiwiaWF0IjoxNjU3NTQ2NTEyfQ.bpo__7jMNxbaeuprHPa6hXl6ONKt4IOCLUJrgihyLO0",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNDkzOTcsImV4cCI6MTY1ODE1MDI5NywiaWF0IjoxNjU4MTQ5Mzk3fQ.hOWz6ngy6FD0WGjmkEPA1Upr_R12I6Yefux5nAK-AEE",
 									"type": "string"
 								}
 							]
 						},
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSPortalRegistracija",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://acme.com/api/pravonapristup/upiti",
-							"protocol": "http",
+							"raw": "https://diplomski2022ouzp.com/api/pravonapristup/upiti",
+							"protocol": "https",
 							"host": [
-								"acme",
+								"diplomski2022ouzp",
 								"com"
 							],
 							"path": [
@@ -616,14 +637,14 @@
 					"response": []
 				},
 				{
-					"name": "CreateRequestProcess",
+					"name": "Kreiraj upit za pristup",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc1NDcyMzUsImV4cCI6MTY1NzU0ODEzNSwiaWF0IjoxNjU3NTQ3MjM1fQ.0pp1x8kggEwFSiE_kvdDDK3dzXDqnY7WazuA2VgGNO4",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNTA5NzcsImV4cCI6MTY1ODE1MTg3NywiaWF0IjoxNjU4MTUwOTc3fQ.tkcqT5yFdKjCcpiVnTSw7hOKsjoblcvKWGTciMiJbeM",
 									"type": "string"
 								}
 							]
@@ -632,7 +653,7 @@
 						"header": [
 							{
 								"key": "SourceKey",
-								"value": "IUSPortal Uput",
+								"value": "IUSPortalPravoNapristup",
 								"type": "text"
 							}
 						],
@@ -646,10 +667,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://acme.com/api/pravonapristup/upit",
-							"protocol": "http",
+							"raw": "https://diplomski2022ouzp.com/api/pravonapristup/upit",
+							"protocol": "https",
 							"host": [
-								"acme",
+								"diplomski2022ouzp",
 								"com"
 							],
 							"path": [
@@ -662,25 +683,31 @@
 					"response": []
 				},
 				{
-					"name": "GetSubscriptions",
+					"name": "Dohvati tipove pretplata",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc1NDY1MTIsImV4cCI6MTY1NzU0NzQxMiwiaWF0IjoxNjU3NTQ2NTEyfQ.bpo__7jMNxbaeuprHPa6hXl6ONKt4IOCLUJrgihyLO0",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNTAzNzcsImV4cCI6MTY1ODE1MTI3NywiaWF0IjoxNjU4MTUwMzc3fQ.E6q06or24TxvSLT9MSuxtvYbjPcg9usx_rWwkWV29Lo",
 									"type": "string"
 								}
 							]
 						},
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSPortalRegistracija",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "hhttp://acme.com/api/pravonapristup/pretplate",
-							"protocol": "hhttp",
+							"raw": "https://diplomski2022ouzp.com/api/pravonapristup/pretplate",
+							"protocol": "https",
 							"host": [
-								"acme",
+								"diplomski2022ouzp",
 								"com"
 							],
 							"path": [
@@ -693,15 +720,21 @@
 					"response": []
 				},
 				{
-					"name": "GetAllEntitys",
+					"name": "Dohvati sve zahtjeve",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSPortalRegistracija",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://acme.com/api/pravonapristup/zahtjevi",
-							"protocol": "http",
+							"raw": "https://diplomski2022ouzp.com/api/pravonapristup/zahtjevi",
+							"protocol": "https",
 							"host": [
-								"acme",
+								"diplomski2022ouzp",
 								"com"
 							],
 							"path": [
@@ -728,30 +761,30 @@
 							}
 						},
 						"url": {
-							"raw": "http://acme.com/api/requestprocess/Authenticate",
-							"protocol": "http",
+							"raw": "https://diplomski2022ouzp.com/api/pravonapristup/autorizacija",
+							"protocol": "https",
 							"host": [
-								"acme",
+								"diplomski2022ouzp",
 								"com"
 							],
 							"path": [
 								"api",
-								"requestprocess",
-								"Authenticate"
+								"pravonapristup",
+								"autorizacija"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "GetResponse",
+					"name": "Dohvati odgovor na upit za pristup",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc1NDY1MTIsImV4cCI6MTY1NzU0NzQxMiwiaWF0IjoxNjU3NTQ2NTEyfQ.bpo__7jMNxbaeuprHPa6hXl6ONKt4IOCLUJrgihyLO0",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNTAzNzcsImV4cCI6MTY1ODE1MTI3NywiaWF0IjoxNjU4MTUwMzc3fQ.E6q06or24TxvSLT9MSuxtvYbjPcg9usx_rWwkWV29Lo",
 									"type": "string"
 								}
 							]
@@ -759,10 +792,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://acme.com/api/pravonapristup/odgovor/1",
-							"protocol": "http",
+							"raw": "https://diplomski2022ouzp.com/api/pravonapristup/odgovor/1",
+							"protocol": "https",
 							"host": [
-								"acme",
+								"diplomski2022ouzp",
 								"com"
 							],
 							"path": [
@@ -790,10 +823,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://acme.com/api/pravonapristup/servisnaobavijest",
-							"protocol": "http",
+							"raw": "https://diplomski2022ouzp.com/api/pravonapristup/servisnaobavijest",
+							"protocol": "https",
 							"host": [
-								"acme",
+								"diplomski2022ouzp",
 								"com"
 							],
 							"path": [

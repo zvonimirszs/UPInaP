@@ -50,11 +50,16 @@ POKRETANJE programskog rješenja za izvođenje iz kontejnera
   - .. (napisati upite prema API-ima)
 
 INSTALACIJA DOCKER desktopa
-   - ...
-   - ne zaboraviti pokrenuti Kubernetes
+   - skinuti i instalirai Docker desktop (besplatan)
+   - nakon instalacije Docker desktop - ako nije na raćunalu instaliran wsl 2
+      - https://docs.microsoft.com/en-gb/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package
+      - https://docs.microsoft.com/en-gb/windows/wsl/install
+   - ne zaboraviti pokrenuti Kubernetes u Docker desktopu
 
 DODAVANJE user-a u docker-grupu
-   - ...
+   - Dodavanje docker-user u docker grupu jer se docker desktop instalira pod admin accountom
+      - https://stackoverflow.com/questions/65423660/how-to-add-domain-user-to-a-group-docker-users-in-windows-10-enterprise-unab
+      - izvršiti komandnu liniju net localgroup "docker-users" "<your username>" /add
 
 POSTMAN
    -Postman je besplatna API platforma za razvojne programere za dizajniranje, izgradnju, testiranje i ponavljanje svojih API-ja
