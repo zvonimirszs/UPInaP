@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "RequestRecords Service",
+			"name": "Servis za evidenciju zahtjeva",
 			"item": [
 				{
 					"name": "GetRequestTypes",
@@ -205,7 +205,7 @@
 			]
 		},
 		{
-			"name": "Subscription Service",
+			"name": "Servis za zahtjev za pretplatom",
 			"item": [
 				{
 					"name": "GetSubscriptions",
@@ -329,7 +329,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5289/api/subscription/CreateEntityForSubscription/2",
+							"raw": "http://localhost:5289/api/pretplata/zahtjev/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -337,8 +337,8 @@
 							"port": "5289",
 							"path": [
 								"api",
-								"subscription",
-								"CreateEntityForSubscription",
+								"pretplata",
+								"zahtjev",
 								"2"
 							]
 						}
@@ -424,7 +424,7 @@
 			]
 		},
 		{
-			"name": "Request Process Service",
+			"name": "Servis za prava ispitanika",
 			"item": [
 				{
 					"name": "GetRequestProcess",
@@ -675,7 +675,7 @@
 			]
 		},
 		{
-			"name": "Identity Service",
+			"name": "Identifikacijski servis",
 			"item": [
 				{
 					"name": "Get",
@@ -782,7 +782,7 @@
 			]
 		},
 		{
-			"name": "Legal Service",
+			"name": "Servis za postavke",
 			"item": [
 				{
 					"name": "Authenticate",
@@ -799,15 +799,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5008/api/identifikacija/autorizacija",
+							"raw": "http://localhost:5051/api/postavke/autorizacija",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5008",
+							"port": "5051",
 							"path": [
 								"api",
-								"identifikacija",
+								"postavke",
 								"autorizacija"
 							]
 						}
