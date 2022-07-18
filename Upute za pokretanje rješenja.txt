@@ -1,4 +1,4 @@
-Pokretanje programskog rješenja iz razvojnog alata (Visual Studio Code)
+POKRETANJE programskog rješenja iz razvojnog alata (Visual Studio Code)
  - svi projekti u Development okruženju koriste InMemory DB
     - zbog toga nije potrebno imati pokrenuti kontejner sa MS SQL Server Express
  - RabbitMQ je pokrenut u kontejneru
@@ -10,24 +10,36 @@ Pokretanje programskog rješenja iz razvojnog alata (Visual Studio Code)
     - Servis za evidneciju zahtjeva
     - Servis za zahtjeve
  - pokretanje servisa pojedinačno
-    - otvoriti termin
+    - otvoriti terminal
     - upisati dotnet run
  - tesiranje svakog servisa  pojedinačno - localhost 
-  - koristiti Postman (besplatan)
-  - .. (napisati upite prema API-ima)
+   - koristiti Postman (besplatan)
+   - opis i instalacija u nastavku
 
-Kreiranje Docker slike
+KREIRANJE DOCKER slike
  - "docker build -t [naziv korisničkog računa na Docker Hub]/[naziv servisa, npr. lex-identity] ."
  Guranje docker slike na Docker Hub
   - izrada računa na Docker Hub (besplatno)
     - "docker push [naziv korisničkog računa na Docker Hub]/[naziv servisa koji se kreirao, npr. lex-identity]" 
 
-Pokretanje programskog rješenja za izvođenje iz kontejnera
- - instalacija Docker desktopa ili nekog drugog alata (besplatno)
+POKRETANJE programskog rješenja za izvođenje iz kontejnera
+ - instalacija DOCKER desktopa ili nekog drugog alata (besplatno)
+ - instalacija ingress-nginx namespace u Kubernetes
+    - https://kubernetes.github.io/ingress-nginx/deploy/#quick-start
+        -   izvršiti komandu liniju: kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.3.0/deploy/static/provider/cloud/deploy.yaml
  - potrebno je izvršiti sve yaml datoteke iz mapi K8S
     - primjer izvršne linije "kubectl apply -f [naziv yaml datoteke, npr. lex-identity-depl.yaml]"
     - da bi testiralo sve funkcionalnosti, svih servisa potrebno je pokrenuti sve servise određenim redosljedom
-        - ... (nazive datoteka redsolojedom i opisom)
+        - ingress-srv.yaml
+        - rabbitmq-delp.yaml
+        - mssql-plat-depl.yaml
+        - local-pvc.yaml
+        - lex-identity-depl.yaml
+        - lex-legal-depl.yaml
+        - lex-subscription-depl.yaml
+        - lex-subscription-np-srv.yaml - opcionalno
+        - lex-requestrecords-depl.yaml
+        - lex-requestprocess-depl.yaml
  - svi projekti u Production okruženju koriste MS SQL DB
     - zbog toga JE potrebno imati pokrenuti kontejner sa MS SQL Server Express (yaml datoteka je u mapi K8S)
  - RabbitMQ je pokrenut u kontejneru
@@ -37,13 +49,28 @@ Pokretanje programskog rješenja za izvođenje iz kontejnera
   - koristiti Postman (besplatan) - preko mapirane domene ...
   - .. (napisati upite prema API-ima)
 
+INSTALACIJA DOCKER desktopa
+   - ...
+   - ne zaboraviti pokrenuti Kubernetes
+
+DODAVANJE user-a u docker-grupu
+   - ...
+
+POSTMAN
+   -Postman je besplatna API platforma za razvojne programere za dizajniranje, izgradnju, testiranje i ponavljanje svojih API-ja
+      - skinuti i instalirati na računalo
+   - Uvoz API upita u Postman za testiranje programskog rješenja
+      - dokumenti
+         - Postman.Kolekcija_za_testiranje.Lokalno.json
+         - Postman.Kolekcija_za_testiranje.K8S.json
+
 SKRIVENI KLJUČ U KIBERNETES
  - kreirati skriveni ključ
     - izvršiti komandnu liniju kubectl create secret generic mssql --from-literal=SA_PASSWORD="pa55w0rd!"
         - msslq je name a SA_PASSWORD je key lozinke - to ćemo koristiti u deployment yaml dokumentu za MSSQL sever 
 EDITIRANJE  HOST dokumenta
-- postavljanje acme.com u naše posatvke - localhost file update
-- putanja je C:\Windows\System32\drivers\etc
-- dokument host
-- otvoriti kao administrator
-   - dodati liniju 127.0.0.1 diplomski2022ouzp.com (to će preusmjeriti sve pozive na 127.0.0.1)
+- postavljanje lažne domene (diplomski2022ouzp.com) u naše postavke - localhost file update
+    - putanja je C:\Windows\System32\drivers\etc
+    - dokument host
+        - otvoriti kao administrator
+        - dodati liniju 127.0.0.1 diplomski2022ouzp.com (to će preusmjeriti sve pozive na 127.0.0.1)

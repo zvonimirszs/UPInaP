@@ -1,0 +1,811 @@
+{
+	"info": {
+		"_postman_id": "c71e6678-6d09-4992-8be8-3a54bd1c5c01",
+		"name": "K8S",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3568770"
+	},
+	"item": [
+		{
+			"name": "Identity Service Docker",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5008/api/identifikacija/testGet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5008",
+							"path": [
+								"api",
+								"identifikacija",
+								"testGet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5008/api/identifikacija/testPost",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5008",
+							"path": [
+								"api",
+								"identifikacija",
+								"testPost"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5008/api/identifikacija/autorizacija",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5008",
+							"path": [
+								"api",
+								"identifikacija",
+								"autorizacija"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ValidateToken",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc0OTI1NDAsImV4cCI6MTY1NzQ5MzQ0MCwiaWF0IjoxNjU3NDkyNTQwfQ.kncOTljdz5JQpW4AQBQ41xANugsPDGjh0HYv3XsDEcg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://acme.com/api/identifikacija/autorizacija",
+							"protocol": "http",
+							"host": [
+								"acme",
+								"com"
+							],
+							"path": [
+								"api",
+								"identifikacija",
+								"autorizacija"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Legal Service Docker",
+			"item": [
+				{
+					"name": "Authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5008/api/identifikacija/autorizacija",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5008",
+							"path": [
+								"api",
+								"identifikacija",
+								"autorizacija"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscription Service Docker",
+			"item": [
+				{
+					"name": "GetSubscriptions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc1Mzc0OTksImV4cCI6MTY1NzUzODM5OSwiaWF0IjoxNjU3NTM3NDk5fQ._Cme2EkUplUMB0f10dvxoCP-YNG9lOz5Rxqw6-GJskk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSPortalRegistracija",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://acme.com/api/pretplata",
+							"protocol": "http",
+							"host": [
+								"acme",
+								"com"
+							],
+							"path": [
+								"api",
+								"pretplata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetEntitysForSubscription",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc1Mzc0OTksImV4cCI6MTY1NzUzODM5OSwiaWF0IjoxNjU3NTM3NDk5fQ._Cme2EkUplUMB0f10dvxoCP-YNG9lOz5Rxqw6-GJskk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSPortalRegistracija",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://acme.com/api/pretplata/zahtjevi/1",
+							"protocol": "http",
+							"host": [
+								"acme",
+								"com"
+							],
+							"path": [
+								"api",
+								"pretplata",
+								"zahtjevi",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetEntityForSubscription",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTczOTg0ODYsImV4cCI6MTY1NzM5OTM4NiwiaWF0IjoxNjU3Mzk4NDg2fQ.bolk2nNUOmW9ODSlccUdicC_2gW9mBiLUV3rwEfXeVE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://acme.com/api/pretplata/zahtjev/1/2",
+							"protocol": "http",
+							"host": [
+								"acme",
+								"com"
+							],
+							"path": [
+								"api",
+								"pretplata",
+								"zahtjev",
+								"1",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateEntityForSubscription",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSPortalRegistracija",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Pero\",\r\n    \"lastName\": \"Ždero\",\r\n    \"email\": \"perozdero@gmail.com\",\r\n    \"address\": \"Perina adresa 51\",\r\n    \"city\": \"Zagreb\",\r\n    \"postNo\": \"10040\",\r\n    \"description\": \"opis\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://acme.com/api/subscription/CreateEntityForSubscription/2",
+							"protocol": "http",
+							"host": [
+								"acme",
+								"com"
+							],
+							"path": [
+								"api",
+								"subscription",
+								"CreateEntityForSubscription",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://acme.com/api/pretplata/Authenticate",
+							"protocol": "http",
+							"host": [
+								"acme",
+								"com"
+							],
+							"path": [
+								"api",
+								"pretplata",
+								"Authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSources",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc2MTQ4NTcsImV4cCI6MTY1NzYxNTc1NywiaWF0IjoxNjU3NjE0ODU3fQ.dB_jjKc6o7vvKWIixHpw6xtYJX8mZWgaMcxp1eYwzmk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSPortalRegistracija",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5289/api/pretplata/izvori",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5289",
+							"path": [
+								"api",
+								"pretplata",
+								"izvori"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RequestRecords Service Docker",
+			"item": [
+				{
+					"name": "GetRequestTypes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://acme.com/api/pravaispitanika/tipovi",
+							"protocol": "http",
+							"host": [
+								"acme",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravaispitanika",
+								"tipovi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRequests",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc0Mzk0NzksImV4cCI6MTY1NzQ0MDM3OSwiaWF0IjoxNjU3NDM5NDc5fQ.Hf3YED59JWja_QZAtEqU4V-H4133WxwZp-dr3Rw_0Ns",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://acme.com/api/pravaispitanika/zahtjevi",
+							"protocol": "http",
+							"host": [
+								"acme",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravaispitanika",
+								"zahtjevi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRequestsByRequestType",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc0Mzk0NzksImV4cCI6MTY1NzQ0MDM3OSwiaWF0IjoxNjU3NDM5NDc5fQ.Hf3YED59JWja_QZAtEqU4V-H4133WxwZp-dr3Rw_0Ns",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://acme.com/api/pravaispitanika/zahtjevi/1",
+							"protocol": "http",
+							"host": [
+								"acme",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravaispitanika",
+								"zahtjevi",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRequestByRequestId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc0Mzk0NzksImV4cCI6MTY1NzQ0MDM3OSwiaWF0IjoxNjU3NDM5NDc5fQ.Hf3YED59JWja_QZAtEqU4V-H4133WxwZp-dr3Rw_0Ns",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://acme.com/api/pravaispitanika/zahtjev/1",
+							"protocol": "http",
+							"host": [
+								"acme",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravaispitanika",
+								"zahtjev",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateRequestRecordForType",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc0Mzk0NzksImV4cCI6MTY1NzQ0MDM3OSwiaWF0IjoxNjU3NDM5NDc5fQ.Hf3YED59JWja_QZAtEqU4V-H4133WxwZp-dr3Rw_0Ns",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "INSOLVEportal",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identificationString\": \"2zvonimirsAS.zs@gmail.com\",\r\n    \"identificationKey\": \"2email\",\r\n    \"deliveryKey\": \"2email\",\r\n    \"firstName\": \"2Ime ispitanika\",\r\n    \"lastName\": \"2Prezime ispitanika\",\r\n    \"email\": \"2zvonimirs.zs@gmail.com\",\r\n    \"address\": \"2Adresa ispitanika\",\r\n    \"city\": \"2Grad ispitanika\",\r\n    \"postNo\": \"210040\",\r\n    \"requestText\": \"2Tekst ispitanika\",\r\n    \"requestNote\": \"2Napomena usluge koja je poslala zahtjev \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/pravaispitanika/zahtjev/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"pravaispitanika",
+								"zahtjev",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://acme.com/api/pravaispitanika/autorizacija",
+							"protocol": "http",
+							"host": [
+								"acme",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravaispitanika",
+								"autorizacija"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Request Process Service Docker",
+			"item": [
+				{
+					"name": "GetRequestProcess",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc1NDY1MTIsImV4cCI6MTY1NzU0NzQxMiwiaWF0IjoxNjU3NTQ2NTEyfQ.bpo__7jMNxbaeuprHPa6hXl6ONKt4IOCLUJrgihyLO0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://acme.com/api/pravonapristup/upiti",
+							"protocol": "http",
+							"host": [
+								"acme",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravonapristup",
+								"upiti"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateRequestProcess",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc1NDcyMzUsImV4cCI6MTY1NzU0ODEzNSwiaWF0IjoxNjU3NTQ3MjM1fQ.0pp1x8kggEwFSiE_kvdDDK3dzXDqnY7WazuA2VgGNO4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSPortal Uput",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identificationString\": \"zvonimirs.zs@gmail.com\",\r\n    \"identificationKey\": \"email\",\r\n    \"responsetypeid\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://acme.com/api/pravonapristup/upit",
+							"protocol": "http",
+							"host": [
+								"acme",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravonapristup",
+								"upit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSubscriptions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc1NDY1MTIsImV4cCI6MTY1NzU0NzQxMiwiaWF0IjoxNjU3NTQ2NTEyfQ.bpo__7jMNxbaeuprHPa6hXl6ONKt4IOCLUJrgihyLO0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "hhttp://acme.com/api/pravonapristup/pretplate",
+							"protocol": "hhttp",
+							"host": [
+								"acme",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravonapristup",
+								"pretplate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllEntitys",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://acme.com/api/pravonapristup/zahtjevi",
+							"protocol": "http",
+							"host": [
+								"acme",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravonapristup",
+								"zahtjevi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://acme.com/api/requestprocess/Authenticate",
+							"protocol": "http",
+							"host": [
+								"acme",
+								"com"
+							],
+							"path": [
+								"api",
+								"requestprocess",
+								"Authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetResponse",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc1NDY1MTIsImV4cCI6MTY1NzU0NzQxMiwiaWF0IjoxNjU3NTQ2NTEyfQ.bpo__7jMNxbaeuprHPa6hXl6ONKt4IOCLUJrgihyLO0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://acme.com/api/pravonapristup/odgovor/1",
+							"protocol": "http",
+							"host": [
+								"acme",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravonapristup",
+								"odgovor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obavijest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"Name\": \"IUSPortal Upit\",\r\n        \"SourceKey\": \"IUSPortalUpitIspitanika\",\r\n        \"Description\": \"Portal IUS-INFO-kontakt obrazac za upit ispitanika - Ispitanik\",\r\n        \"LawfulnessProcessing\": \"ISPITANIK\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://acme.com/api/pravonapristup/servisnaobavijest",
+							"protocol": "http",
+							"host": [
+								"acme",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravonapristup",
+								"servisnaobavijest"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
