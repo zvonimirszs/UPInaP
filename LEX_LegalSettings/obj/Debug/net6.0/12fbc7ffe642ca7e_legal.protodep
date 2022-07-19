@@ -1,2 +1,0 @@
-obj\Debug\net6.0\Protos/Legal.cs \
-obj\Debug\net6.0\Protos/LegalGrpc.cs: Protos/legal.proto
