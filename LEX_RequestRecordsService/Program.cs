@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 /* TO DO: 
-    - pripremiti odgovor nakon zahtjeva
-    - iz LegalSettings uzeti (gRPC) podatke o člancima 15, 16, 17, 18, 19, 20 i 21 - ovisno o tipu upita
-    - handlati grešku u komunikaciji sa servisima (gRPC i MQ) kada servisi nisu dostupni
-    - dodati middleware za handlanje SourceKey-a (IdentityServiceAttribute)
-    - primiti poruku da je negdje zahtjev zaprimljen i upisati ga u bazu -  MQ - EventProcessor
+#    - pripremiti odgovor nakon zahtjeva
+#    - iz LegalSettings uzeti (gRPC) podatke o člancima 15, 16, 17, 18, 19, 20 i 21 - ovisno o tipu upita
+#    - handlati grešku u komunikaciji sa servisima (gRPC i MQ) kada servisi nisu dostupni
+#    - dodati middleware za handlanje SourceKey-a (IdentityServiceAttribute)
+#    - primiti poruku da je negdje zahtjev zaprimljen i upisati ga u bazu -  MQ - EventProcessor
 */
 /*  ASPEKT/ODGOVORNOST ovog servisa je zaprimanje zahtjeva ispitanika:
     - otvoriti metodu za autentifikaciju (prima username i lozinku a vraća token) - token traje 15 minuta

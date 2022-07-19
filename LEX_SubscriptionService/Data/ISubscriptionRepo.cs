@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using LEX_LegalSettings;
 using LEX_SubscriptionService.Models;
 using LEX_SubscriptionService.Models.Authenticate;
 
@@ -13,6 +14,7 @@ public interface ISubscriptionRepo
     IEnumerable<Entity> GetAllEntitys();
     IEnumerable<Entity> GetEntitysForSubscription(int subscriptionId);
     Entity GetEntity(int subscriptionId, int entityId);
+    Entity GetEntity(int entityId);
     void CreateEntity(int subscriptionId, Entity entity);
     void CreateEntity(Entity entity);
     #endregion
@@ -42,6 +44,10 @@ public interface ISubscriptionRepo
     #region Authentifikacija
     AuthenticateResponse Authenticate(AuthenticateRequest model);
     AuthenticateResponse ValidateToken(string token);
+    #endregion
+
+    #region Response
+    LegalResponse GetLegalContent(GrpcRequestLegalModel model);
     #endregion
 
 }

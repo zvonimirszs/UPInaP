@@ -12,6 +12,19 @@ public interface ILegalSettingsRepo
     RequestType GetRequestType(int requestTypeId);
     #endregion
 
+    #region Definitions
+    IEnumerable<Definition> GetAllDefinition();
+    #endregion
+
+    #region Subject
+    SubjectData GetSubject();
+    #endregion
+
+    #region Legislation
+    IEnumerable<Legislation> GetAllLegislation();
+    IEnumerable<Legislation> GetLegislationByArticleNo(IList<string> articleNos);
+    #endregion
+
     #region Authentifikacija
     AuthenticateResponse Authenticate(AuthenticateRequest model);
     AuthenticateResponse ValidateToken(string token);

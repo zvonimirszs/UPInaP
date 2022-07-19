@@ -24,5 +24,6 @@
   <ItemGroup>
     <Protobuf Include="Protos\subscriptions.proto" GrpcServices="Server" />
     <Protobuf Include="Protos\identity.proto" GrpcServices="Client" />
+    <Protobuf Include="Protos\legal.proto" GrpcServices="Client" />
   </ItemGroup>
 </Project>

@@ -1,3 +1,4 @@
+using LEX_LegalSettings;
 using LEX_SubscriptionService.Models;
 using LEX_SubscriptionService.Models.Authenticate;
 using LEX_SubscriptionService.SyncDataServices.Grpc;
@@ -8,11 +9,17 @@ namespace LEX_SubscriptionService.Data
     {
         private readonly AppDbContext _context;
         private readonly IIdentityDataClient _identityservice;
+        private readonly ILegalDataClient _legalservice;
 
-        public SubscriptionRepo(AppDbContext context, IIdentityDataClient identityservice)
+        public SubscriptionRepo(AppDbContext context, IIdentityDataClient identityservice, ILegalDataClient legalservice)
         {
             _context = context;
             _identityservice = identityservice;
+            _legalservice = legalservice;
+        }
+        public bool SaveChanges()
+        {
+            return(_context.SaveChanges() >= 0);
         }
         #region Authentifikacija
         public AuthenticateResponse Authenticate(AuthenticateRequest model)
@@ -31,6 +38,7 @@ namespace LEX_SubscriptionService.Data
             return auth;
         }
         #endregion
+        
         #region Entity
         public void CreateEntity(int subscriptionId, Entity entity)
         {
@@ -69,7 +77,16 @@ namespace LEX_SubscriptionService.Data
               }
             ).ToList();
         }      
-
+        public Entity GetEntity(int entityId)
+        {
+            var entityItem = _context.Entitys
+                .Where(c => c.Id == entityId).FirstOrDefault();
+            if(entityItem != null)
+            {
+                entityItem.Subscription = _context.Subscriptions.FirstOrDefault(p => p.Id == entityItem.SubscriptionId);                
+            }
+            return entityItem;
+        }
         public Entity GetEntity(int subscriptionId, int entityId)
         {
             var entityItem = _context.Entitys
@@ -102,7 +119,11 @@ namespace LEX_SubscriptionService.Data
         }
         #endregion
 
-        #region Service        
+        #region Service  
+        public IEnumerable<Service> GetAllService()
+        {
+            throw new NotImplementedException();
+        }              
         public void CreateService(Service sub)
         {
             throw new NotImplementedException();
@@ -167,16 +188,7 @@ namespace LEX_SubscriptionService.Data
         }           
         #endregion
 
-        public bool SaveChanges()
-        {
-            return(_context.SaveChanges() >= 0);
-        }
-
-        public IEnumerable<Service> GetAllService()
-        {
-            throw new NotImplementedException();
-        }
-
+        #region Source
         public IEnumerable<Source> GetAllSource()
         {
             var sourcesItem = _context.Sources.ToList();
@@ -188,5 +200,20 @@ namespace LEX_SubscriptionService.Data
         {
             return _context.Sources.Any(p => p.SourceKey == key);
         }
+
+
+        #endregion
+
+        #region Response
+        public LegalResponse GetLegalContent(GrpcRequestLegalModel model)
+        {
+            var grpcClient = _legalservice;
+            var response = grpcClient.ReturnResponse(model);
+
+            return response; 
+        }
+        #endregion
+
+
     }
 }

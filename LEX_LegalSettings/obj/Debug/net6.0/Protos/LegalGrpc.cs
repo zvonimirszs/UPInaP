@@ -49,6 +49,10 @@ namespace LEX_LegalSettings {
     static readonly grpc::Marshaller<global::LEX_LegalSettings.GetAllRequest> __Marshaller_GetAllRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::LEX_LegalSettings.GetAllRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::LEX_LegalSettings.RequestTypeResponse> __Marshaller_RequestTypeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::LEX_LegalSettings.RequestTypeResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::LEX_LegalSettings.GrpcRequestLegalModel> __Marshaller_GrpcRequestLegalModel = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::LEX_LegalSettings.GrpcRequestLegalModel.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::LEX_LegalSettings.LegalResponse> __Marshaller_LegalResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::LEX_LegalSettings.LegalResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::LEX_LegalSettings.GetAllRequest, global::LEX_LegalSettings.RequestTypeResponse> __Method_GetAllRequestType = new grpc::Method<global::LEX_LegalSettings.GetAllRequest, global::LEX_LegalSettings.RequestTypeResponse>(
@@ -57,6 +61,14 @@ namespace LEX_LegalSettings {
         "GetAllRequestType",
         __Marshaller_GetAllRequest,
         __Marshaller_RequestTypeResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::LEX_LegalSettings.GrpcRequestLegalModel, global::LEX_LegalSettings.LegalResponse> __Method_GetLegalResponse = new grpc::Method<global::LEX_LegalSettings.GrpcRequestLegalModel, global::LEX_LegalSettings.LegalResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetLegalResponse",
+        __Marshaller_GrpcRequestLegalModel,
+        __Marshaller_LegalResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -74,6 +86,12 @@ namespace LEX_LegalSettings {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::LEX_LegalSettings.LegalResponse> GetLegalResponse(global::LEX_LegalSettings.GrpcRequestLegalModel request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -82,7 +100,8 @@ namespace LEX_LegalSettings {
     public static grpc::ServerServiceDefinition BindService(GrpcLegalSettingBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_GetAllRequestType, serviceImpl.GetAllRequestType).Build();
+          .AddMethod(__Method_GetAllRequestType, serviceImpl.GetAllRequestType)
+          .AddMethod(__Method_GetLegalResponse, serviceImpl.GetLegalResponse).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -93,6 +112,7 @@ namespace LEX_LegalSettings {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, GrpcLegalSettingBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_GetAllRequestType, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::LEX_LegalSettings.GetAllRequest, global::LEX_LegalSettings.RequestTypeResponse>(serviceImpl.GetAllRequestType));
+      serviceBinder.AddMethod(__Method_GetLegalResponse, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::LEX_LegalSettings.GrpcRequestLegalModel, global::LEX_LegalSettings.LegalResponse>(serviceImpl.GetLegalResponse));
     }
 
   }

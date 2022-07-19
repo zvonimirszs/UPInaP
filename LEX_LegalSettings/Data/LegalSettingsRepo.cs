@@ -13,6 +13,13 @@ public class LegalSettingsRepo : ILegalSettingsRepo
         _context = context;
         _identityservice = identityservice;
     }
+    public bool SaveChanges()
+    {
+        throw new NotImplementedException();
+    }
+
+
+    #region Authentifikacija
     public AuthenticateResponse Authenticate(AuthenticateRequest model)
     {
         var grpcClient = _identityservice;
@@ -20,7 +27,13 @@ public class LegalSettingsRepo : ILegalSettingsRepo
 
         return auth; 
     }
+    public AuthenticateResponse ValidateToken(string token)
+    {
+        throw new NotImplementedException();
+    }
+    #endregion
 
+    #region RequestType
     public IEnumerable<RequestType> GetAllRequestTypes()
     {
         return _context.RequestTypes.ToList();
@@ -30,14 +43,35 @@ public class LegalSettingsRepo : ILegalSettingsRepo
     {
         return _context.RequestTypes.Where(p => p.Id == requestTypeId).FirstOrDefault();
     }
+    #endregion
 
-    public bool SaveChanges()
-    {
-        throw new NotImplementedException();
-    }
 
-    public AuthenticateResponse ValidateToken(string token)
+    #region Definitions
+    public IEnumerable<Definition> GetAllDefinition()
     {
-        throw new NotImplementedException();
+         return _context.Definitions.ToList();
     }
+    #endregion
+
+    #region Subject
+    public SubjectData GetSubject()
+    {
+        return _context.SubjectDatas.FirstOrDefault();
+    }
+    #endregion
+
+    #region Legislation
+    public IEnumerable<Legislation> GetAllLegislation()
+    {
+         return _context.Legislations.ToList();
+    }
+    public IEnumerable<Legislation> GetLegislationByArticleNo(IList<string> articleNos)
+    {
+        return _context.Legislations.Where(l => articleNos.Contains(l.ArticleNo)).ToList();
+    }
+    #endregion
+
+
+
+
 }

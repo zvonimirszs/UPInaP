@@ -31,14 +31,12 @@ public class IdentityDataClient : IIdentityDataClient
         try
         {
             var reply = client.Authenticate(c);
-            //Console.WriteLine($"--> Odgovor GRPC Servera: {JsonSerializer.Serialize(reply)}. Metodea: ReturnValidateTokenResponse");
             return _mapper.Map<AuthenticateResponse>(reply.Identity);
         }
         catch (Exception ex)
         {
             Console.WriteLine($"--> NIJE moguće pozvati ili povezati se na GRPC Server {ex.Message}");
             throw new ServiceException($"--> NIJE moguće pozvati ili povezati se na GRPC Server za IDENTIFIKACIJU.");
-            //return null;
         }
     }
 
@@ -57,13 +55,11 @@ public class IdentityDataClient : IIdentityDataClient
         try
         {
             var reply = client.ValidateToken(request);
-            //Console.WriteLine($"--> Odgovor GRPC Servera: {JsonSerializer.Serialize(reply)}. Metodea: ReturnValidateTokenResponse");
             return _mapper.Map<AuthenticateResponse>(reply.Identity);
         }
         catch (Exception ex)
         {
             Console.WriteLine($"--> NIJE moguće pozvati ili povezati se na GRPC Server {ex.Message}");
-            //throw new AppException($"--> NIJE moguće pozvati ili povezati se na GRPC Server {ex.Message}");
             throw new ServiceException($"--> NIJE moguće pozvati ili povezati se na GRPC Server za IDENTIFIKACIJU.");
         }
     }

@@ -113,10 +113,23 @@ public class EntityController : ControllerBase
         {
                 Console.WriteLine($"--> Could not send asynchronously: {ex.Message}");
         }
+        LEX_LegalSettings.GrpcRequestLegalModel legalRequest = new LEX_LegalSettings.GrpcRequestLegalModel();
+        legalRequest.ArticleNo.Add("14");
+        legalRequest.ArticleNo.Add("15");
+        legalRequest.ArticleNo.Add("16");
 
-        //  return CreatedAtRoute(nameof(GetE),
-        //      new {platformId = subscriptionId, commandId = commandReadDto.Id}, commandReadDto);
-        //return Ok();
-        return RedirectToAction("GetEntityForSubscription",  new {subscriptionId = subscriptionId, entityId = entityReadDto.Id}); 
+        var legalResponse = _repository.GetLegalContent(legalRequest);        
+
+        var entityCreated = _repository.GetEntity(entityReadDto.Id);       
+        if(entityCreated == null)
+        {
+            throw new ServiceException($"--> NIJE moguće upisati ZAHTJEV");
+        }
+     
+        if(legalResponse == null)
+        {
+            return Ok(new { zahtjev = _mapper.Map<EntityReadDto>(entityCreated), odgovor =  "Sadržaj zakonodastva nije moguće isporučiti"});  
+        }
+        return Ok(new { zahtjev = _mapper.Map<EntityReadDto>(entityCreated), odgovor =  legalResponse});
     }
 }

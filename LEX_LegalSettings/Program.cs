@@ -5,10 +5,8 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 /* TO DO: 
-    - handlati grešku u komunikaciji sa servisima (gRPC i MQ) kada servisi nisu dostupni
-    - pripremiti metode za slanje SubjectData, Definitions, Legislation
-    - doraditi gRPC model za slanje SubjectData i Legislation
-    - doraditi controller za slanje Definitions
+    # - handlati grešku u komunikaciji sa servisima (gRPC i MQ) kada servisi nisu dostupni
+
 */
 /*  ASPEKT/ODGOVORNOST ovog servisa je domena pravih tekstova i postavke vidotelja obrade:
    # - poslati asinkronu poruku da se nešto izmjenilo ili dodalo (MQ)

@@ -1,6 +1,7 @@
 using AutoMapper;
 using LEX_IdentityService;
 using LEX_LegalSettings;
+using LEX_LegalSettings.Dtos;
 using LEX_LegalSettings.Models;
 using LEX_LegalSettings.Models.Authenticate;
 
@@ -12,6 +13,24 @@ public class LegalSettingsProfile : Profile
         // Source -> Target
         CreateMap<RequestType, GrpcRequestTypeModel>()
             .ForMember(dest => dest.RequesttypeId, opt => opt.MapFrom(src =>src.Id))
+            .ForMember(dest => dest.Name, opt => opt.MapFrom(src =>src.Name));
+
+        CreateMap<SubjectData, SubjectDataReadDto>();
+        CreateMap<Definition, DefinitionReadDto>();
+        CreateMap<Legislation, LegislationReadDto>();
+
+        CreateMap<SubjectData, GrpcSubjectDataModel>()
+            .ForMember(dest => dest.SubjectDataId, opt => opt.MapFrom(src =>src.Id))
+            .ForMember(dest => dest.Controller, opt => opt.MapFrom(src =>src.Controller))
+            .ForMember(dest => dest.Dpo, opt => opt.MapFrom(src =>src.DataProtectionOfficer));
+        CreateMap<Definition, GrpcDefinitionModel>()
+            .ForMember(dest => dest.DefinitionId, opt => opt.MapFrom(src =>src.Id))
+            .ForMember(dest => dest.Name, opt => opt.MapFrom(src =>src.Name))
+            .ForMember(dest => dest.Description, opt => opt.MapFrom(src =>src.Description));
+        CreateMap<Legislation, GrpcLegislationModel>()
+            .ForMember(dest => dest.LegislationId, opt => opt.MapFrom(src =>src.Id))
+            .ForMember(dest => dest.ArticleNo, opt => opt.MapFrom(src =>src.ArticleNo))
+            .ForMember(dest => dest.Link, opt => opt.MapFrom(src =>src.Link))
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src =>src.Name));
                     
         CreateMap<GrpcIdentityModel, AuthenticateResponse>()

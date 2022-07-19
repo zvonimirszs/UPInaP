@@ -1,0 +1,9 @@
+LEX_IdentityService/bin
+LEX_LegalSettings/bin
+LEX_SubscriptionService/bin
+LEX_IdentityService/obj
+LEX_LegalSettings/obj
+LEX_SubscriptionService/obj
+LEX_IdentityService/.vscode
+LEX_LegalSettings/.vscode
+LEX_SubscriptionService/.vscode

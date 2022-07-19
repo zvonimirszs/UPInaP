@@ -8,13 +8,6 @@ using LEX_SubscriptionService.SyncDataServices.Http;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-/* TO DO: 
-    - iz LegalSettings servisa uzeti (gRPC) podatke o člancima 5, 6 i 7 - ulazi u odgovor na poslanu pretplatu
-    - nakon primljenog zahtjeva i uspiješnog zaprimanje - poslati odgovor
-        - primljeni zahtjev - ako NIJE servis dostupan   
-        - primljeni zahtjev  + citirati članke (iz egalSettings servisa) - ako JE servis dostupan
-    - handlati grešku u komunikaciji sa servisima (gRPC i MQ)kada servisi nisu dostupni
-*/
 /*  ASPEKT/ODGOVORNOST ovog servisa je zaprimanje pretplatničkih zahtjeva:
     - otvoriti metodu za autentifikaciju (prima username i lozinku a vraća token) - token traje 15 minuta
     - zaprimiti pretplatnički zahtjev
@@ -29,8 +22,14 @@ var builder = WebApplication.CreateBuilder(args);
             - kada  SourceKey-a nije dobar
                 - nema pristupa
     - poslati odgovor
-    #    - zahtjev zaprimljen - tekstualni odgovor koji zahvaća pravno tumačenje aspekta zahtjeva   
+        - zahtjev zaprimljen - tekstualni odgovor koji zahvaća pravno tumačenje aspekta zahtjeva
+        - iz LegalSettings servisa uzeti (gRPC) podatke o člancima 5, 6 i 7 - ulazi u odgovor na poslanu pretplatu
+            - primljeni zahtjev - ako NIJE servis dostupan   
+            - primljeni zahtjev  + citirati članke (iz LegalSettings servisa) - ako JE servis dostupan 
     - poslati asinkronu poruku da je pretplatnički zahtjev zaprimljen (MQ)
+    - handlati grešku u komunikaciji sa servisima (gRPC i MQ) kada servisi nisu dostupni
+        - gRPC - u responsu - Servis nastavi raditi
+        - MQ - u responsu je normalna odgovor ali u ispisu na servisu je poruka - Servis nastavi raditi
 */
 /* 
     FUNKCIONALNOSTI SERVISA
@@ -54,7 +53,7 @@ var builder = WebApplication.CreateBuilder(args);
     OVISNOST
     - Identity servis
         - Authenticate - na zahtjev traži podatke (gRPC) - NE MOŽE ispuniti zahtjev bez servisa
-        #    - koju poruku šalje prema van kada servis nije dostupan?
+            - poruka: 503 + tekst
 */
 /* 
     OUZP
@@ -96,6 +95,7 @@ builder.Services.AddCors();
 builder.Services.AddControllers();
 builder.Services.AddScoped<ISubscriptionRepo, SubscriptionRepo>();
 builder.Services.AddScoped<IIdentityDataClient, IdentityDataClient>();
+builder.Services.AddScoped<ILegalDataClient, LegalDataClient>();
 builder.Services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
 builder.Services.AddSingleton<IMessageBusClient, MessageBusClient>();
 builder.Services.AddGrpc();
