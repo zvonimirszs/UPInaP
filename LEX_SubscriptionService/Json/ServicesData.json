@@ -1,0 +1,22 @@
+[    
+    {
+        "Name": "IUS-INFO",
+        "Description": "Pravni sadrzaj IUS-INFO usluge"
+    },
+    {
+        "Name": "INSOLVE",
+        "Description": "Poslovni sadrzaj INSOLVE usluge"
+    },
+    {
+        "Name": "Dogadaji",
+        "Description": "Dogadaji LEXPERA"
+    },    
+    {
+        "Name": "Knjige",
+        "Description": "Knjige i e-knjige LEXPERA"
+    },
+    {
+        "Name": "EDUS",
+        "Description": "Pravni sadrzaj EDUS usluge"
+    }
+]

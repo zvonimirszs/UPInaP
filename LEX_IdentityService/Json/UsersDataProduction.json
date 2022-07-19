@@ -1,0 +1,34 @@
+[    
+    {
+        "FirstName":"Test", 
+        "LastName":"Admin", 
+        "Username": "testAdmin", 
+        "Role": "Admin",
+        "Password": "Admin",
+        "PasswordHash": ""
+    },
+    {
+        "FirstName":"Test", 
+        "LastName":"User", 
+        "Username": "test", 
+        "Role": "User",
+        "Password": "User",
+        "PasswordHash": ""
+    },
+    {
+        "FirstName":"Ivan", 
+        "LastName":"Horvat", 
+        "Username": "ivan", 
+        "Role": "Servis",
+        "Password": "pretplata",
+        "PasswordHash": ""
+    },
+    {
+        "FirstName":"Zvonimir", 
+        "LastName":"Smer", 
+        "Username": "zvonimirs", 
+        "Role": "Admin",
+        "Password": "admin",
+        "PasswordHash": ""
+    }
+]

@@ -1,0 +1,820 @@
+{
+	"info": {
+		"_postman_id": "adedcca7-6b26-4d0b-b30e-183f6cbec304",
+		"name": "Lokalno",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3568770"
+	},
+	"item": [
+		{
+			"name": "Servis za evidenciju zahtjeva",
+			"item": [
+				{
+					"name": "GetRequestTypes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/pravaispitanika/tipovi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"pravaispitanika",
+								"tipovi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRequests",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc0Mzk0NzksImV4cCI6MTY1NzQ0MDM3OSwiaWF0IjoxNjU3NDM5NDc5fQ.Hf3YED59JWja_QZAtEqU4V-H4133WxwZp-dr3Rw_0Ns",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/pravaispitanika/zahtjevi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"pravaispitanika",
+								"zahtjevi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRequestsByRequestType",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc0Mzk0NzksImV4cCI6MTY1NzQ0MDM3OSwiaWF0IjoxNjU3NDM5NDc5fQ.Hf3YED59JWja_QZAtEqU4V-H4133WxwZp-dr3Rw_0Ns",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/pravaispitanika/zahtjevi/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"pravaispitanika",
+								"zahtjevi",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRequestByRequestId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc0Mzk0NzksImV4cCI6MTY1NzQ0MDM3OSwiaWF0IjoxNjU3NDM5NDc5fQ.Hf3YED59JWja_QZAtEqU4V-H4133WxwZp-dr3Rw_0Ns",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/pravaispitanika/zahtjev/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"pravaispitanika",
+								"zahtjev",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateRequestRecordForType",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc0Mzk0NzksImV4cCI6MTY1NzQ0MDM3OSwiaWF0IjoxNjU3NDM5NDc5fQ.Hf3YED59JWja_QZAtEqU4V-H4133WxwZp-dr3Rw_0Ns",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "INSOLVEportal",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identificationString\": \"2zvonimirsAS.zs@gmail.com\",\r\n    \"identificationKey\": \"2email\",\r\n    \"deliveryKey\": \"2email\",\r\n    \"firstName\": \"2Ime ispitanika\",\r\n    \"lastName\": \"2Prezime ispitanika\",\r\n    \"email\": \"2zvonimirs.zs@gmail.com\",\r\n    \"address\": \"2Adresa ispitanika\",\r\n    \"city\": \"2Grad ispitanika\",\r\n    \"postNo\": \"210040\",\r\n    \"requestText\": \"2Tekst ispitanika\",\r\n    \"requestNote\": \"2Napomena usluge koja je poslala zahtjev \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/pravaispitanika/zahtjev/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"pravaispitanika",
+								"zahtjev",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/pravaispitanika/autorizacija",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"pravaispitanika",
+								"autorizacija"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Servis za zahtjev za pretplatom",
+			"item": [
+				{
+					"name": "GetSubscriptions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgwNzMyMDgsImV4cCI6MTY1ODA3NDEwOCwiaWF0IjoxNjU4MDczMjA4fQ.l-OfZSIUFAQDb7AIIK303LSmZaICAKk3Qs0ArFMrreQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSPortalRegistracija",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5289/api/pretplata",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5289",
+							"path": [
+								"api",
+								"pretplata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetEntitysForSubscription",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTczOTg0ODYsImV4cCI6MTY1NzM5OTM4NiwiaWF0IjoxNjU3Mzk4NDg2fQ.bolk2nNUOmW9ODSlccUdicC_2gW9mBiLUV3rwEfXeVE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5289/api/pretplata/zahtjevi/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5289",
+							"path": [
+								"api",
+								"pretplata",
+								"zahtjevi",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetEntityForSubscription",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTczOTg0ODYsImV4cCI6MTY1NzM5OTM4NiwiaWF0IjoxNjU3Mzk4NDg2fQ.bolk2nNUOmW9ODSlccUdicC_2gW9mBiLUV3rwEfXeVE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5289/api/pretplata/zahtjev/1/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5289",
+							"path": [
+								"api",
+								"pretplata",
+								"zahtjev",
+								"1",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateEntityForSubscription",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSportal",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Pero\",\r\n    \"lastName\": \"Ždero\",\r\n    \"email\": \"perozdero@gmail.com\",\r\n    \"address\": \"Perina adresa 51\",\r\n    \"city\": \"Zagreb\",\r\n    \"postNo\": \"10040\",\r\n    \"description\": \"opis\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5289/api/pretplata/zahtjev/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5289",
+							"path": [
+								"api",
+								"pretplata",
+								"zahtjev",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSources - upit preko drugog servisa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc2MTQ4NTcsImV4cCI6MTY1NzYxNTc1NywiaWF0IjoxNjU3NjE0ODU3fQ.dB_jjKc6o7vvKWIixHpw6xtYJX8mZWgaMcxp1eYwzmk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSPortalRegistracija",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5289/api/pretplata/izvori",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5289",
+							"path": [
+								"api",
+								"pretplata",
+								"izvori"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5289/api/pretplata/Authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5289",
+							"path": [
+								"api",
+								"pretplata",
+								"Authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Servis za prava ispitanika",
+			"item": [
+				{
+					"name": "GetRequestProcess",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc2MTM0MjgsImV4cCI6MTY1NzYxNDMyOCwiaWF0IjoxNjU3NjEzNDI4fQ.OXUB7skLGvg4lXZgaPsEYV4K7Xd3Z1_OpMquBUKzYe0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSPortalPravoNapristup",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5028/api/pravonapristup/upiti",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5028",
+							"path": [
+								"api",
+								"pravonapristup",
+								"upiti"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateRequestProcess",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc2MTM0MjgsImV4cCI6MTY1NzYxNDMyOCwiaWF0IjoxNjU3NjEzNDI4fQ.OXUB7skLGvg4lXZgaPsEYV4K7Xd3Z1_OpMquBUKzYe0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "INSOLVEportal",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identificationString\": \"zvonimirs.zs@gmail.com\",\r\n    \"identificationKey\": \"email\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5028/api/pravonapristup/upit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5028",
+							"path": [
+								"api",
+								"pravonapristup",
+								"upit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSubscriptions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTc2MTM0MjgsImV4cCI6MTY1NzYxNDMyOCwiaWF0IjoxNjU3NjEzNDI4fQ.OXUB7skLGvg4lXZgaPsEYV4K7Xd3Z1_OpMquBUKzYe0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSPortalPravoNapristup",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5028/api/pravonapristup/pretplate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5028",
+							"path": [
+								"api",
+								"pravonapristup",
+								"pretplate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllEntitys",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSPortalPravoNapristup",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5028/api/pravonapristup/zahtjevi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5028",
+							"path": [
+								"api",
+								"pravonapristup",
+								"zahtjevi"
+							],
+							"query": [
+								{
+									"key": "SourceKey",
+									"value": "IUSPortalPravoNapristup",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5028/api/pravonapristup/autorizacija",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5028",
+							"path": [
+								"api",
+								"pravonapristup",
+								"autorizacija"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obavijest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"Name\": \"IUSPortal Upit\",\r\n        \"SourceKey\": \"IUSPortalUpitIspitanika\",\r\n        \"Description\": \"Portal IUS-INFO-kontakt obrazac za upit ispitanika - Ispitanik\",\r\n        \"LawfulnessProcessing\": \"ISPITANIK\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5028/api/pravonapristup/servisnaobavijest",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5028",
+							"path": [
+								"api",
+								"pravonapristup",
+								"servisnaobavijest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetResponse",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTcyODg1MDEsImV4cCI6MTY1NzI4OTQwMSwiaWF0IjoxNjU3Mjg4NTAxfQ.2aXt0Jy5Q7KgS9iKwKPVhvYOCu9HMqFlDWyzX9yYrqg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5028/api/pravonapristup/odgovor/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5028",
+							"path": [
+								"api",
+								"pravonapristup",
+								"odgovor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Identifikacijski servis",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5008/api/identifikacija/testGet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5008",
+							"path": [
+								"api",
+								"identifikacija",
+								"testGet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5008/api/identifikacija/testPost",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5008",
+							"path": [
+								"api",
+								"identifikacija",
+								"testPost"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5008/api/identifikacija/autorizacija",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5008",
+							"path": [
+								"api",
+								"identifikacija",
+								"autorizacija"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ValidateToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5008/api/identifikacija/autorizacija",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5008",
+							"path": [
+								"api",
+								"identifikacija",
+								"autorizacija"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Servis za postavke",
+			"item": [
+				{
+					"name": "Authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5051/api/postavke/autorizacija",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5051",
+							"path": [
+								"api",
+								"postavke",
+								"autorizacija"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

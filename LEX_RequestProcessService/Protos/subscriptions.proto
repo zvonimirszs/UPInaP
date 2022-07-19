@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+option csharp_namespace = "LEX_SubscriptionService";
+
+service GrpcSubscription {
+    rpc GetAllSubscriptions (GetAllRequest) returns (SubscriptionResponse);
+    rpc GetAllEntitys (GetAllRequest) returns (EntityResponse);
+    rpc GetAllSources (GetAllRequest) returns (SourceResponse);
+}
+service GrpcEntity {
+    
+}
+
+message GetAllRequest {}
+
+message GrpcSubscriptionModel{
+    int32 subscriptionId = 1;
+    string name = 2;
+    string key = 3;
+}
+
+message GrpcEntityModel{
+    int32 entityId = 1;
+    string email = 2;
+    string sourceKey = 3;
+    int32 subscriptionId = 4;
+}
+
+message GrpcSourceModel{
+    int32 sourceId = 1;
+    string name = 2;
+    string sourceKey = 3;
+    string description = 4;
+    string lawfulnessProcessing = 5;
+}
+
+message SubscriptionResponse {
+    repeated GrpcSubscriptionModel subscription = 1;
+}
+message EntityResponse {
+    repeated GrpcEntityModel entity = 1;
+}
+message SourceResponse {
+    repeated GrpcSourceModel source = 1;
+}

@@ -1,0 +1,21 @@
+LEX_IdentityService/bin/
+LEX_LegalSettings/bin/
+LEX_SubscriptionService/bin/
+LEX_IdentityService/obj
+LEX_LegalSettings/obj/
+LEX_SubscriptionService/obj/
+LEX_IdentityService/.vscode
+LEX_LegalSettings/.vscode
+LEX_SubscriptionService/.vscode
+
+# Build results
+LEX_LegalSettings/[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+LEX_LegalSettings/[Bb]in/
+LEX_LegalSettings/[Oo]bj/
+[Ll]og/

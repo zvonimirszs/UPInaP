@@ -1,0 +1,137 @@
+[
+    {
+        "Id": 1,
+        "Name": "osobni podaci",
+        "Description": "„osobni podaci” znači svi podaci koji se odnose na pojedinca čiji je identitet utvrđen ili se može utvrditi („ispitanik”); pojedinac čiji se identitet može utvrditi jest osoba koja se može identificirati izravno ili neizravno, osobito uz pomoć identifikatora kao što su ime, identifikacijski broj, podaci o lokaciji, mrežni identifikator ili uz pomoć jednog ili više čimbenika svojstvenih za fizički, fiziološki, genetski, mentalni, ekonomski, kulturni ili socijalni identitet tog pojedinca"
+    },
+    {
+        "Id": 2,
+        "Name": "obrada",
+        "Description": "„obrada” znači svaki postupak ili skup postupaka koji se obavljaju na osobnim podacima ili na skupovima osobnih podataka, bilo automatiziranim bilo neautomatiziranim sredstvima kao što su prikupljanje, bilježenje, organizacija, strukturiranje, pohrana, prilagodba ili izmjena, pronalaženje, obavljanje uvida, uporaba, otkrivanje prijenosom, širenjem ili stavljanjem na raspolaganje na drugi način, usklađivanje ili kombiniranje, ograničavanje, brisanje ili uništavanje;"
+    },
+    {
+        "Id": 3,
+        "Name": "ograničavanje obrade",
+        "Description": "„ograničavanje obrade” znači označivanje pohranjenih osobnih podataka s ciljem ograničavanja njihove obrade u budućnosti;"
+    },
+    {
+        "Id": 4,
+        "Name": "izrada profila",
+        "Description": "„izrada profila” znači svaki oblik automatizirane obrade osobnih podataka koji se sastoji od uporabe osobnih podataka za ocjenu određenih osobnih aspekata povezanih s pojedincem, posebno za analizu ili predviđanje aspekata u vezi s radnim učinkom, ekonomskim stanjem, zdravljem, osobnim sklonostima, interesima, pouzdanošću, ponašanjem, lokacijom ili kretanjem tog pojedinca;"
+    },
+    {
+        "Id": 5,
+        "Name": "pseudonimizacija",
+        "Description": "„pseudonimizacija” znači obrada osobnih podataka na način da se osobni podaci više ne mogu pripisati određenom ispitaniku bez uporabe dodatnih informacija, pod uvjetom da se takve dodatne informacije drže odvojeno te da podliježu tehničkim i organizacijskim mjerama kako bi se osiguralo da se osobni podaci ne mogu pripisati pojedincu čiji je identitet utvrđen ili se može utvrditi;"
+    },
+    {
+        "Id": 6,
+        "Name": "sustav pohrane",
+        "Description": "„sustav pohrane” znači svaki strukturirani skup osobnih podataka dostupnih prema posebnim kriterijima, bilo da su centralizirani, decentralizirani ili raspršeni na funkcionalnoj ili zemljopisnoj osnovi;"
+    },
+    {
+        "Id": 7,
+        "Name": "voditelj obrade",
+        "Description": ""
+    },
+    {
+        "Id": 8,
+        "Name": "izvršitelj obrade",
+        "Description": ""
+    },
+    {
+        "Id": 8,
+        "Name": "izvršitelj obrade",
+        "Description": ""
+    },
+    {
+        "Id": 9,
+        "Name": "primatelj",
+        "Description": ""
+    },
+    {
+        "Id": 10,
+        "Name": "treća strana",
+        "Description": ""
+    },
+    {
+        "Id": 11,
+        "Name": "privola",
+        "Description": ""
+    },
+    {
+        "Id": 12,
+        "Name": "povreda osobnih podataka",
+        "Description": ""
+    },
+    {
+        "Id": 13,
+        "Name": "genetski podaci",
+        "Description": ""
+    },
+    {
+        "Id": 14,
+        "Name": "biometrijski podaci",
+        "Description": ""
+    },
+    {
+        "Id": 15,
+        "Name": "podaci koji se odnose na zdravlje",
+        "Description": ""
+    },
+    {
+        "Id": 16,
+        "Name": "glavni poslovni nastan",
+        "Description": ""
+    },
+    {
+        "Id": 17,
+        "Name": "predstavnik",
+        "Description": ""
+    },
+    {
+        "Id": 18,
+        "Name": "poduzeće",
+        "Description": ""
+    },
+    {
+        "Id": 19,
+        "Name": "grupa poduzetnika",
+        "Description": ""
+    },
+    {
+        "Id": 20,
+        "Name": "obvezujuća korporativna pravila",
+        "Description": ""
+    },
+    {
+        "Id": 21,
+        "Name": "nadzorno tijelo",
+        "Description": ""
+    },
+    {
+        "Id": 22,
+        "Name": "predmetno nadzorno tijelo",
+        "Description": ""
+    },
+    {
+        "Id": 23,
+        "Name": "prekogranična obrada",
+        "Description": ""
+    },
+    {
+        "Id": 24,
+        "Name": "relevantni i obrazloženi prigovor",
+        "Description": ""
+    },
+    {
+        "Id": 25,
+        "Name": "usluga informacijskog društva",
+        "Description": ""
+    },
+    {
+        "Id": 26,
+        "Name": "međunarodna organizacija",
+        "Description": ""
+    }
+]
