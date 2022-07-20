@@ -1,0 +1,844 @@
+{
+	"info": {
+		"_postman_id": "c71e6678-6d09-4992-8be8-3a54bd1c5c01",
+		"name": "K8S",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3568770"
+	},
+	"item": [
+		{
+			"name": "Identifikacijski servis",
+			"item": [
+				{
+					"name": "Get - testiranje dohvaćanja Get metode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://diplomski2022ouzp.com/api/identifikacija/testGet",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp",
+								"com"
+							],
+							"path": [
+								"api",
+								"identifikacija",
+								"testGet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://diplomski2022ouzp/api/identifikacija/testPost",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp"
+							],
+							"path": [
+								"api",
+								"identifikacija",
+								"testPost"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate - testiranje metode",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://diplomski2022ouzp.com/api/identifikacija/autorizacija",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp",
+								"com"
+							],
+							"path": [
+								"api",
+								"identifikacija",
+								"autorizacija"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ValidateToken - testiranje metode",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNDkyMjMsImV4cCI6MTY1ODE1MDEyMywiaWF0IjoxNjU4MTQ5MjIzfQ.9-siEo3XI5r-Dmeo1kcjxV9WdK_-qY80y4-fwiQ5Ar",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://diplomski2022ouzp.com/api/identifikacija/autorizacija",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp",
+								"com"
+							],
+							"path": [
+								"api",
+								"identifikacija",
+								"autorizacija"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Servis za postavke",
+			"item": [
+				{
+					"name": "Authenticate - testiranje metode",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://diplomski2022ouzp.com/api/postavke/autorizacija",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp",
+								"com"
+							],
+							"path": [
+								"api",
+								"postavke",
+								"autorizacija"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Servis za zahtjeve za pretplatom",
+			"item": [
+				{
+					"name": "Dohvati pretplate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNDkzOTcsImV4cCI6MTY1ODE1MDI5NywiaWF0IjoxNjU4MTQ5Mzk3fQ.hOWz6ngy6FD0WGjmkEPA1Upr_R12I6Yefux5nAK-AEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSPortalRegistracija",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://diplomski2022ouzp.com/api/pretplata",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pretplata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dohvati zahtjeve po pretplati",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNDkzOTcsImV4cCI6MTY1ODE1MDI5NywiaWF0IjoxNjU4MTQ5Mzk3fQ.hOWz6ngy6FD0WGjmkEPA1Upr_R12I6Yefux5nAK-AEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSPortalRegistracija",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://diplomski2022ouzp.com/api/pretplata/zahtjevi/1",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pretplata",
+								"zahtjevi",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dohvati zahtjev po broju i pretplati",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNDkzOTcsImV4cCI6MTY1ODE1MDI5NywiaWF0IjoxNjU4MTQ5Mzk3fQ.hOWz6ngy6FD0WGjmkEPA1Upr_R12I6Yefux5nAK-AEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSPortalRegistracija",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://diplomski2022ouzp.com/api/pretplata/zahtjev/1/1",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pretplata",
+								"zahtjev",
+								"1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Kreiraj zahtjev po pretplati",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNTA5NzcsImV4cCI6MTY1ODE1MTg3NywiaWF0IjoxNjU4MTUwOTc3fQ.tkcqT5yFdKjCcpiVnTSw7hOKsjoblcvKWGTciMiJbeM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSPortalRegistracija",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Pero\",\r\n    \"lastName\": \"Ždero\",\r\n    \"email\": \"perozdero@gmail.com\",\r\n    \"address\": \"Perina adresa 51\",\r\n    \"city\": \"Zagreb\",\r\n    \"postNo\": \"10040\",\r\n    \"description\": \"opis\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://diplomski2022ouzp.com/api/pretplata/zahtjev/2",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pretplata",
+								"zahtjev",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://diplomski2022ouzp.com/api/pretplata/autorizacija",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pretplata",
+								"autorizacija"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dohvati izvore preko drugog servisa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNDMxNzgsImV4cCI6MTY1ODE0NDA3OCwiaWF0IjoxNjU4MTQzMTc4fQ.TzcMM_KE-aHgXna9UvO9DirN0aXiXuVJz_R_6E9NKas",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSPortalRegistracija",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://diplomski2022ouzp.com/api/pretplata/izvori",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pretplata",
+								"izvori"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Servis za evidenciju zahtjeva",
+			"item": [
+				{
+					"name": "Dohvati tipove zahtjeva",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://diplomski2022ouzp.com/api/pravaispitanika/tipovi",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravaispitanika",
+								"tipovi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dohvati sve upite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNDkzOTcsImV4cCI6MTY1ODE1MDI5NywiaWF0IjoxNjU4MTQ5Mzk3fQ.hOWz6ngy6FD0WGjmkEPA1Upr_R12I6Yefux5nAK-AEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://diplomski2022ouzp.com/api/pravaispitanika/zahtjevi",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravaispitanika",
+								"zahtjevi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dohvati upite prema tipu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNDkzOTcsImV4cCI6MTY1ODE1MDI5NywiaWF0IjoxNjU4MTQ5Mzk3fQ.hOWz6ngy6FD0WGjmkEPA1Upr_R12I6Yefux5nAK-AEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://diplomski2022ouzp.com/api/pravaispitanika/zahtjevi/1",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravaispitanika",
+								"zahtjevi",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dohvati upit prema broju upita",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNDkzOTcsImV4cCI6MTY1ODE1MDI5NywiaWF0IjoxNjU4MTQ5Mzk3fQ.hOWz6ngy6FD0WGjmkEPA1Upr_R12I6Yefux5nAK-AEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://diplomski2022ouzp.com/api/pravaispitanika/zahtjev/1",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravaispitanika",
+								"zahtjev",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Kreiraj upit prema tipu zahtjeva",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNTA5NzcsImV4cCI6MTY1ODE1MTg3NywiaWF0IjoxNjU4MTUwOTc3fQ.tkcqT5yFdKjCcpiVnTSw7hOKsjoblcvKWGTciMiJbeM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "INSOLVEportal",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identificationString\": \"2zvonimirsAS.zs@gmail.com\",\r\n    \"identificationKey\": \"2email\",\r\n    \"deliveryKey\": \"2email\",\r\n    \"firstName\": \"2Ime ispitanika\",\r\n    \"lastName\": \"2Prezime ispitanika\",\r\n    \"email\": \"2zvonimirs.zs@gmail.com\",\r\n    \"address\": \"2Adresa ispitanika\",\r\n    \"city\": \"2Grad ispitanika\",\r\n    \"postNo\": \"210040\",\r\n    \"requestText\": \"2Tekst ispitanika\",\r\n    \"requestNote\": \"2Napomena usluge koja je poslala zahtjev \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://diplomski2022ouzp.com/api/pravaispitanika/zahtjev/4",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravaispitanika",
+								"zahtjev",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://diplomski2022ouzp.com/api/pravaispitanika/autorizacija",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravaispitanika",
+								"autorizacija"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Servis za prava ispitanika",
+			"item": [
+				{
+					"name": "Dohvati upite na pristup",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNDkzOTcsImV4cCI6MTY1ODE1MDI5NywiaWF0IjoxNjU4MTQ5Mzk3fQ.hOWz6ngy6FD0WGjmkEPA1Upr_R12I6Yefux5nAK-AEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSPortalRegistracija",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://diplomski2022ouzp.com/api/pravonapristup/upiti",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravonapristup",
+								"upiti"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Kreiraj upit za pristup",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNTA5NzcsImV4cCI6MTY1ODE1MTg3NywiaWF0IjoxNjU4MTUwOTc3fQ.tkcqT5yFdKjCcpiVnTSw7hOKsjoblcvKWGTciMiJbeM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSPortalPravoNapristup",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identificationString\": \"zvonimirs.zs@gmail.com\",\r\n    \"identificationKey\": \"email\",\r\n    \"responsetypeid\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://diplomski2022ouzp.com/api/pravonapristup/upit",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravonapristup",
+								"upit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dohvati tipove pretplata",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNTAzNzcsImV4cCI6MTY1ODE1MTI3NywiaWF0IjoxNjU4MTUwMzc3fQ.E6q06or24TxvSLT9MSuxtvYbjPcg9usx_rWwkWV29Lo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSPortalRegistracija",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://diplomski2022ouzp.com/api/pravonapristup/pretplate",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravonapristup",
+								"pretplate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dohvati sve zahtjeve",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "SourceKey",
+								"value": "IUSPortalRegistracija",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://diplomski2022ouzp.com/api/pravonapristup/zahtjevi",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravonapristup",
+								"zahtjevi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://diplomski2022ouzp.com/api/pravonapristup/autorizacija",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravonapristup",
+								"autorizacija"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dohvati odgovor na upit za pristup",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJGaXJzdE5hbWUiOiJUZXN0IiwiTGFzdE5hbWUiOiJVc2VyIiwiVXNlcm5hbWUiOiJ0ZXN0IiwiUm9sZSI6IlVzZXIiLCJuYmYiOjE2NTgxNTAzNzcsImV4cCI6MTY1ODE1MTI3NywiaWF0IjoxNjU4MTUwMzc3fQ.E6q06or24TxvSLT9MSuxtvYbjPcg9usx_rWwkWV29Lo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://diplomski2022ouzp.com/api/pravonapristup/odgovor/1",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravonapristup",
+								"odgovor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obavijest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"Name\": \"IUSPortal Upit\",\r\n        \"SourceKey\": \"IUSPortalUpitIspitanika\",\r\n        \"Description\": \"Portal IUS-INFO-kontakt obrazac za upit ispitanika - Ispitanik\",\r\n        \"LawfulnessProcessing\": \"ISPITANIK\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://diplomski2022ouzp.com/api/pravonapristup/servisnaobavijest",
+							"protocol": "https",
+							"host": [
+								"diplomski2022ouzp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pravonapristup",
+								"servisnaobavijest"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

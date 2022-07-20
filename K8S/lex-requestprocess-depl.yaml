@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lex-requestprocess-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lex-requestprocessservice
+  template:
+    metadata:
+      labels:
+        app: lex-requestprocessservice
+    spec:
+      containers:
+        - name: lex-requestprocessservice
+          image: zvonimirs1975/lex-requestprocessservice:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lex-requestprocess-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: lex-requestprocessservice
+  ports:
+  - name: lex-requestprocessservice
+    protocol: TCP
+    port: 80
+    targetPort: 80
+  - name: lex-requestprocessgrpc
+    protocol: TCP
+    port: 666
+    targetPort: 666

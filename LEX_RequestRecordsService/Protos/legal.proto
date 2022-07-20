@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+option csharp_namespace = "LEX_LegalSettings";
+
+service GrpcLegalSetting {
+    rpc GetAllRequestType (GetAllRequest) returns (RequestTypeResponse);
+    rpc GetLegalResponse (GrpcRequestLegalModel) returns (LegalResponse);
+    rpc GetSubjectData (GetAllRequest) returns (SubjectDataResponse);
+    rpc GetDefinition (GetAllRequest) returns (DefinitionResponse);
+    rpc GetLegislation (GrpcRequestLegalModel) returns (LegislationResponse);
+}
+
+// Request
+message GetAllRequest {}
+message RequestTypeResponse {
+    repeated GrpcRequestTypeModel requesttype = 1;
+}
+message GrpcRequestLegalModel{
+    repeated string articleNo = 1;
+}
+
+// Response
+message LegalResponse {
+    GrpcSubjectDataModel subject = 1;
+    repeated GrpcDefinitionModel definitions = 2;
+    repeated GrpcLegislationModel legislations = 3;
+}
+message SubjectDataResponse {
+    GrpcSubjectDataModel subject = 1;
+}
+message DefinitionResponse {
+    repeated GrpcDefinitionModel definitions = 1;
+}
+message LegislationResponse {
+    repeated GrpcLegislationModel legislations = 1;
+}
+
+// Models
+message GrpcRequestTypeModel{
+    int32 requesttypeId = 1;
+    string name = 2;
+}
+message GrpcSubjectDataModel{
+    int32 subjectDataId = 1;
+    string controller = 2;
+    string dpo = 3;
+}
+message GrpcDefinitionModel{
+    int32 definitionId = 1;
+    string name = 2;
+    string description = 3;
+}
+message GrpcLegislationModel{
+    int32 legislationId = 1;
+    string articleNo = 2;   
+    string name = 3;
+    string link = 4;
+}
