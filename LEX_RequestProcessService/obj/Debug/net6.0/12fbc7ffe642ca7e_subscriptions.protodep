@@ -1,2 +1,0 @@
-obj\Debug\net6.0\Protos/Subscriptions.cs \
-obj\Debug\net6.0\Protos/SubscriptionsGrpc.cs: Protos/subscriptions.proto
