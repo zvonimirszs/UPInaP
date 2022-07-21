@@ -33,14 +33,27 @@ namespace LEX_RequestProcessService.Profiles
                 .ForMember(dest => dest.ExternalId, opt => opt.MapFrom(src => src.SubscriptionId))
                 .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
                 .ForMember(dest => dest.Key, opt => opt.MapFrom(src => src.Key))
-                .ForMember(dest => dest.Purpose, opt => opt.Ignore())
-                .ForMember(dest => dest.Description, opt => opt.Ignore())
+                .ForMember(dest => dest.Purpose, opt => opt.MapFrom(src => src.Purpose))
+                .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Description))
                 .ForMember(dest => dest.ServiceId, opt => opt.Ignore());
             CreateMap<GrpcEntityModel, Entity>()
                 .ForMember(dest => dest.ExternalId, opt => opt.MapFrom(src => src.EntityId))
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
                 .ForMember(dest => dest.SourceKey, opt => opt.MapFrom(src => src.SourceKey))
                 .ForMember(dest => dest.SubscriptionId, opt => opt.MapFrom(src =>src.SubscriptionId));
+            CreateMap<GrpcEntityAllModel, Entity>()
+                .ForMember(dest => dest.ExternalId, opt => opt.MapFrom(src => src.EntityId))
+                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
+                .ForMember(dest => dest.SourceKey, opt => opt.MapFrom(src => src.SourceKey))
+                .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src =>src.FirstName))
+                .ForMember(dest => dest.LastName, opt => opt.MapFrom(src =>src.LastName))
+                .ForMember(dest => dest.Address, opt => opt.MapFrom(src =>src.Address))
+                .ForMember(dest => dest.City, opt => opt.MapFrom(src =>src.City))
+                .ForMember(dest => dest.PostNo, opt => opt.MapFrom(src =>src.PostNo))
+                .ForMember(dest => dest.Description, opt => opt.MapFrom(src =>src.Description))
+                .ForMember(dest => dest.SubscriptionId, opt => opt.MapFrom(src =>src.SubscriptionId));
+
+
             CreateMap<Entity, GrpcEntityModel>()
                 .ForMember(dest => dest.EntityId, opt => opt.MapFrom(src => src.ExternalId))
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))

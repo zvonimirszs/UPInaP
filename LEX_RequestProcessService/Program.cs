@@ -7,10 +7,9 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 /* TO DO: 
-    - iz LegalSettings uzeti (gRPC) podatke o voditelju obrade i dpo-u - ulazi u complex odgovor
-    - iz LegalSettings uzeti (gRPC) podatke o člancima 6, 12, 13, 14 i 15 - ulazi u complex odgovor
-    - iz SubscriptionService uzeti (gRPC) podatke o imenu, prezimenu, adresi, poštanskom broju, opisu  - ulazi u complex odgovor
-    - handlati grešku u komunikaciji sa servisima (gRPC i MQ)kada servisi nisu dostupni
+    * - iz LegalSettings uzeti (gRPC) podatke o voditelju obrade i dpo-u - ulazi u complex odgovor
+    * - iz SubscriptionService uzeti (gRPC) podatke o imenu, prezimenu, adresi, poštanskom broju, opisu  - ulazi u complex odgovor
+    * - handlati grešku u komunikaciji sa servisima (gRPC i MQ)kada servisi nisu dostupni
 */
 /*  ASPEKT/ODGOVORNOST ovog servisa je slanje podataka koje organizacija ima (svi osobni podaci (log)) + priprema odgovora na upit ispitanika vezano za uporabu osobnih podataka:
     - otvoriti metodu za autentifikaciju (prima username i lozinku a vraća token) - token traje 15 minuta
@@ -21,10 +20,10 @@ var builder = WebApplication.CreateBuilder(args);
         - pripremiti odgovor
             - 2 vrste odgovora
                 - simple odgovor: 
-                    - osnovne podatke o entitetu (), na što je sve pretplaćen, ???? čl. 12 i 13 i 15 -- sadrži u odgovoru osnovne podatke o entitetu i na što je sve pretplaćen(services + subscrptions))
+                    - osnovne podatke o entitetu (), na što je sve pretplaćen -- sadrži u odgovoru osnovne podatke o entitetu i na što je sve pretplaćen(services + subscrptions))
                 - complex odgovor: 
-                #    - sve podatke o entitetu, na što je sve pretplaćen, ???? čl. 12 i 13 i 15  -- sadrži u odgovoru sve podatke o entitetu i na što je sve pretplaćen(services + subscrptions))   
-                #    - podatci o zakonskim člancima + pojašnjenje svake temelj za obradu + definicije
+                     - iz LegalSettings uzeti (gRPC) podatke o voditelju obrade i dpo-u - ulazi u complex odgovor
+                     - iz SubscriptionService uzeti (gRPC) podatke o imenu, prezimenu, adresi, poštanskom broju, opisu
         - poslati asinkronu poruku da je zahtjev zaprimljen - MQ 
     - slušati MQ
     -   u DB ima podatke koje ne obrađuje (samo drži)
@@ -123,9 +122,9 @@ builder.Services.AddHostedService<MessageBusSubscriber>();
 builder.Services.AddSingleton<IMessageBusClient, MessageBusClient>();
 builder.Services.AddSingleton<IEventProcessor, EventProcessor>(); 
 builder.Services.AddScoped<IIdentityDataClient, IdentityDataClient>();
-
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddScoped<ILegalDataClient, LegalDataClient>();
 builder.Services.AddScoped<ISubscriptionDataClient, SubscriptionDataClient>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

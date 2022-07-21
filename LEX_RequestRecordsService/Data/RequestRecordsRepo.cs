@@ -138,7 +138,7 @@ public class RequestRecordsRepo : IRequestRecordsRepo
         return response; 
     }
 
-    SubjectDataResponse IRequestRecordsRepo.GetLegalSubjectData()
+    public SubjectDataResponse GetLegalSubjectData()
     {
         var grpcClient = _legalservice;
         var response = grpcClient.ReturnSubjectData();
@@ -146,7 +146,7 @@ public class RequestRecordsRepo : IRequestRecordsRepo
         return response; 
     }
 
-    LegislationResponse IRequestRecordsRepo.GetLegalLegislations(GrpcRequestLegalModel model)
+    public LegislationResponse GetLegalLegislations(GrpcRequestLegalModel model)
     {
         var grpcClient = _legalservice;
         var response = grpcClient.ReturnLegislations(model);

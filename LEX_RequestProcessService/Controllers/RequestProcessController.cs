@@ -5,6 +5,7 @@ using LEX_RequestProcessService.Attributes;
 using LEX_RequestProcessService.Attributes.Authorization;
 using LEX_RequestProcessService.Data;
 using LEX_RequestProcessService.Dtos;
+using LEX_RequestProcessService.Helpers;
 using LEX_RequestProcessService.Models;
 using LEX_RequestProcessService.Models.Authenticate;
 using Microsoft.AspNetCore.Mvc;
@@ -73,7 +74,9 @@ public class RequestProcessController : ControllerBase
             Console.WriteLine("--> EMPTY entityItems...");
             return NotFound();
         }
-        var ProcessInfoItems = _repository.GetProcessInfoForEntitys(entityItems);
+        ModelHelper helper =  new ModelHelper(_repository);
+        var ProcessInfoItems = helper.GetProcessInfoForEntitys(entityItems, requestType); //_repository.GetProcessInfoForEntitys(entityItems);
+
         // prebaci u EntityRead objekt + spoji sa Subscription objektom
         var entitysReadDto = (from e in entityItems
             select new EntityReadDto

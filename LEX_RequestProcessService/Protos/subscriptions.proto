@@ -5,6 +5,7 @@ option csharp_namespace = "LEX_SubscriptionService";
 service GrpcSubscription {
     rpc GetAllSubscriptions (GetAllRequest) returns (SubscriptionResponse);
     rpc GetAllEntitys (GetAllRequest) returns (EntityResponse);
+    rpc GetEntitysByIds (GrpcRequestEntityModel) returns (EntityAllResponse);
     rpc GetAllSources (GetAllRequest) returns (SourceResponse);
 }
 service GrpcEntity {
@@ -12,11 +13,16 @@ service GrpcEntity {
 }
 
 message GetAllRequest {}
+message GrpcRequestEntityModel{
+    repeated int32 entityId = 1;
+}
 
 message GrpcSubscriptionModel{
     int32 subscriptionId = 1;
     string name = 2;
     string key = 3;
+    string purpose = 4;
+    string description = 5;
 }
 
 message GrpcEntityModel{
@@ -24,6 +30,19 @@ message GrpcEntityModel{
     string email = 2;
     string sourceKey = 3;
     int32 subscriptionId = 4;
+}
+
+message GrpcEntityAllModel{
+    int32 entityId = 1;
+    string email = 2;
+    string sourceKey = 3;
+    int32 subscriptionId = 4;    
+    string firstName = 5;
+    string lastName = 6;
+    string address = 7;
+    string city = 8;
+    string postNo = 9;
+    string description = 10;
 }
 
 message GrpcSourceModel{
@@ -39,6 +58,9 @@ message SubscriptionResponse {
 }
 message EntityResponse {
     repeated GrpcEntityModel entity = 1;
+}
+message EntityAllResponse {
+    repeated GrpcEntityAllModel entity = 1;
 }
 message SourceResponse {
     repeated GrpcSourceModel source = 1;

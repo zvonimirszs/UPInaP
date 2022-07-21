@@ -44,6 +44,24 @@ public class GrpcSubscriptionService : GrpcSubscription.GrpcSubscriptionBase
         Console.WriteLine("--> Sending Entity For other services...");
         return Task.FromResult(response);
     }
+    public override Task<EntityAllResponse> GetEntitysByIds(GrpcRequestEntityModel request, ServerCallContext context)
+    {            
+        Console.WriteLine($"--> GetEntitysByIds - Request {JsonSerializer.Serialize(request)}");
+        var response = new EntityAllResponse();
+        var entityItems = _repository.GetAllEntitys();
+
+        foreach(var ent in entityItems)
+        {
+            Console.WriteLine($"--> Send to Client GetEntitysByIds {JsonSerializer.Serialize(ent)}");
+            Console.WriteLine($"--> Send to Client GetEntitysByIds {JsonSerializer.Serialize(_mapper.Map<GrpcEntityAllModel>(ent))}");
+            if(request.EntityId.Contains(ent.Id))
+            {
+                response.Entity.Add(_mapper.Map<GrpcEntityAllModel>(ent));                
+            }
+        }
+        Console.WriteLine("--> Sending Entity For other services...");
+        return Task.FromResult(response);
+    }
 
     public override Task<SourceResponse> GetAllSources(GetAllRequest request, ServerCallContext context)
     {            

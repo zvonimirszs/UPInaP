@@ -1,3 +1,4 @@
+using LEX_LegalSettings;
 using LEX_RequestProcessService.Models;
 using LEX_RequestProcessService.Models.Authenticate;
 
@@ -6,7 +7,8 @@ namespace LEX_RequestProcessService.Data;
 public interface IRequestProcessRepo
 {
     bool SaveChanges();
-
+    string[] GetLegislationArticleNo();
+    
     #region Request
     IEnumerable<Request> GetAllRequests();
     Request GetRequestById(int requestTypeId, int requestId);
@@ -40,6 +42,9 @@ public interface IRequestProcessRepo
     #region Response & ProcessInfo
     IEnumerable<ProcessInfo> GetProcessInfoForEntitys(IEnumerable<Entity> entitys);
     ResponseType GetResponseTypeById(int responseId);
+    DefinitionResponse GetLegalDefinitions();
+    SubjectDataResponse GetLegalSubjectData();
+    LegislationResponse GetLegalLegislations(GrpcRequestLegalModel model);    
     #endregion
 
     #region Authentifikacija

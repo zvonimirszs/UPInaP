@@ -58,6 +58,30 @@ namespace LEX_RequestProcessService.SyncDataServices.Grpc
                 return null;
             }
         }  
+        public IEnumerable<Entity> ReturnEntitysByIds(List<Entity> enityItems)
+        {
+            Console.WriteLine($"--> Calling GRPC Service {_configuration["GrpcSubscription"]}. ReturnEntitysIds");
+            var channel = GrpcChannel.ForAddress(_configuration["GrpcSubscription"]);
+            var client = new GrpcSubscription.GrpcSubscriptionClient(channel);
+            var request = new GrpcRequestEntityModel();
+            foreach (var item in enityItems)
+            {
+                request.EntityId.Add(item.ExternalId);
+            }
+            Console.WriteLine($"--> Request  GrpcRequestEntityModel {JsonSerializer.Serialize(request)}. ReturnEntitysIds");
+            //TO DO: dodati entityid u request
+            try
+            {
+                var reply = client.GetEntitysByIds(request);
+                Console.WriteLine($"--> Reply from Server {JsonSerializer.Serialize(reply)}. ReturnEntitysIds");
+                return _mapper.Map<IEnumerable<Entity>>(reply.Entity);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"--> Couldnot call GRPC Server {ex.Message}");
+                return null;
+            }
+        }  
 
         public IEnumerable<Source> ReturnAllSources()
         {

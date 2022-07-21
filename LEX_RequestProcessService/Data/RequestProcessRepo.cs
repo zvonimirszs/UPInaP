@@ -1,3 +1,4 @@
+using LEX_LegalSettings;
 using LEX_RequestProcessService.Data;
 using LEX_RequestProcessService.Models;
 using LEX_RequestProcessService.Models.Authenticate;
@@ -9,12 +10,25 @@ namespace LEX_RequestProcessService.Data
     {
         private readonly IIdentityDataClient _identityservice;
         private readonly AppDbContext _context;
+        private readonly IConfiguration _configuration;
+        private readonly ILegalDataClient _legalservice;
+        private readonly ISubscriptionDataClient _subscriptionservice;
 
-        public RequestProcessRepo(AppDbContext context, IIdentityDataClient identityservice)
+        public RequestProcessRepo(AppDbContext context, IIdentityDataClient identityservice, ILegalDataClient legalservice, ISubscriptionDataClient subscriptionservice, IConfiguration configuration)
         {
             _context = context;
             _identityservice = identityservice;
+            _legalservice = legalservice;
+            _subscriptionservice = subscriptionservice;
+            _configuration = configuration;
         }
+
+        public string[] GetLegislationArticleNo()
+        {
+            Console.WriteLine($"--> GetLegislationArticleNo: {_configuration["LegislationArticleNo"]}");
+            return _configuration["LegislationArticleNo"].Split(',');
+        }
+
         #region Entity
         public void CreateEntity(Entity entity)
         {
@@ -43,8 +57,9 @@ namespace LEX_RequestProcessService.Data
             }
             else if(responseType.Id == 2)
             {
-                // TO DO: dohvati sve Entity podatke iz Subscription servisa za kompleksni upit
-                return _context.Entitys.Where(p => p.Email == value).ToList();
+                var entityItems = _context.Entitys.Where(p => p.Email == value).ToList();
+                var entityItemsFromService = _subscriptionservice.ReturnEntitysByIds(entityItems);
+                return entityItemsFromService == null ? entityItems : entityItemsFromService;
             }
             else
             {
@@ -184,10 +199,32 @@ namespace LEX_RequestProcessService.Data
                 }
             ).ToList();
         }
-
         public ResponseType GetResponseTypeById(int responseId)
         {
             return _context.ResponseTypes.Where(p => p.Id == responseId).FirstOrDefault();
+        }
+        public DefinitionResponse GetLegalDefinitions()
+        {
+            var grpcClient = _legalservice;
+            var response = grpcClient.ReturnDefinitions();
+
+            return response; 
+        }
+
+        public SubjectDataResponse GetLegalSubjectData()
+        {
+            var grpcClient = _legalservice;
+            var response = grpcClient.ReturnSubjectData();
+
+            return response; 
+        }
+
+        public LegislationResponse GetLegalLegislations(GrpcRequestLegalModel model)
+        {
+            var grpcClient = _legalservice;
+            var response = grpcClient.ReturnLegislations(model);
+
+            return response; 
         }
         #endregion
     }

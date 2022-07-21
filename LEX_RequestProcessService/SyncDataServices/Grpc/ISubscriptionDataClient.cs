@@ -19,6 +19,11 @@ namespace LEX_RequestProcessService.SyncDataServices.Grpc
         /// <returns>lista zahtjeva</returns>
         IEnumerable<Entity> ReturnAllEntitys();
         /// <summary>
+        /// dohvaća sve Entity-e (zahtjeve) uz drugog servisa
+        /// </summary>
+        /// <returns>lista zahtjeva</returns>
+        IEnumerable<Entity> ReturnEntitysByIds(List<Entity> enityItems);
+        /// <summary>
         /// dohvaća sve Sources (izvore) uz drugog servisa
         /// </summary>
         /// <returns>lista izvora</returns>
